@@ -1,16 +1,16 @@
-## Setting Up Crave Devspace CLI
+# Setting Up Crave Devspace CLI
 
-##### Getting a [foss.crave.io](https://Foss.crave.io) account
+### Getting a [foss.crave.io](https://Foss.crave.io) account
 
 - DM one of the admins on [discord](https://discord.crave.io) since
   self-signup is disabled
 
-##### Downloading
+### Downloading
 
 1. Great! Now head on over to [foss.crave.io](https://Foss.crave.io)
 and press the Downloads button in the Left Hand Side menu.
 
-###### Windows
+#### *Windows*
 
 On windows, download the zip, extract it, enter it.
 
@@ -24,7 +24,7 @@ cd /d pathtocravefolder 
 (replacing pathtocravefolder with the full or relative path to your
 crave folder)
 
-###### Linux
+#### *Linux*
 
 - If you're on linux, run this command to download crave binary
 
@@ -46,7 +46,7 @@ mv ${PWD}/crave ${HOME}/bin/ 
 sudo ln -sf /home/${USER}/bin/crave /usr/bin/crave; sudo chmod +x /usr/bin/crave 
 ```
 
-###### Web
+#### *Web*
 
 Open [sessions](https://foss.crave.io/app/#/session?team=14) tab and
 click on "Create Session/Connect" button.
@@ -55,7 +55,7 @@ Now, [skip to the next
 part](https://opendroid.pugzarecute.com/wiki/Crave_Devspace#Setting_Up_The_Project)
 after setting up tmux
 
-##### How to Prepare Environment
+### How to Prepare Environment
 
 2. Now open up your browser again and navigate back to foss.crave.io
 dashboard. On the same Left Hand Side menu, and go to API keys.
@@ -73,7 +73,7 @@ directory, or wherever your terminal leads you when you first open it.
 crave devspace
 ```
 
-##### Bonus: Building without Devspace CLI
+### Bonus: Building without Devspace CLI
 
 - Follow all the steps except do not enter into Devspace CLI(crave
   devspace command).
@@ -100,16 +100,16 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo;
 chmod a+rx ~/.bin/repo
 ```
 **Do Not Do This Inside Crave Devspace CLI!**
-##### Bonus: Using tmux
+### Bonus: Using tmux
 
 Using tmux is recommended to quickly view builds, multitask, etc. Here
 is a simple guide on how to use tmux:
 
 <https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>
 
-## Setting Up The Project
+# Setting Up The Project
 
-##### Setting up the Project
+### Setting up the Project
 
 1. First use list to check the available projects:
 
@@ -132,7 +132,7 @@ clone destroy to delete the folder. Do not use rm -rf!
 crave clone destroy /crave-devspaces/Lineage21
 ```
 
-##### Setting up the Project - Alternative Method
+### Setting up the Project - Alternative Method
 
 Instead of doing the above step, you could directly repo init a
 supported ROM too! Crave will see git project is set up and assign
@@ -169,7 +169,7 @@ repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-l
 CLI and causes trouble for other users. Devspace CLI also does not have
 the resources to build a ROM or a similar huge project directly.**
 
-##### Workspace Persistence
+### Workspace Persistence
 
 Workspace persistence here refers to the preservation of what you have
 synced and compiled in the past.
@@ -217,7 +217,7 @@ Tip: You use --clean flag in crave run to reset the build storage as
 shown
 [here](https://opendroid.pugzarecute.com/wiki/Crave_Devspace#How_to_build_using_Crave_Run_Command)
 
-##### Crave.yaml
+### Crave.yaml
 
 This is a file to pass specific instructions to crave. Because repo init
 put files in .repo/manifests, that's where our crave.yaml should go.
@@ -268,7 +268,7 @@ rm .repo/manifests/crave.yaml* || true; # Removes existing crave.yamls
 curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/yamls/crave.yaml.aosp # Downloads crave.yaml
 ```
 
-##### Optional: Setting up build environment
+### Optional: Setting up build environment
 
 Use this command to enter into a machine with your source code mounted:
 
@@ -282,9 +282,9 @@ be wiped if you do a clean build.
 **Do not run repo sync or build the ROM here, wait in the crave run
 queue for a more powerful machine.**
 
-## Building Using Crave Run command
+# Building Using Crave Run command
 
-##### How to build using Crave Run Command
+### How to build using Crave Run Command
 
 Simply use crave run! On a normal server, we'd be running commands one
 by one. But since crave uses a queue system, we run all the commands in
@@ -306,7 +306,7 @@ crave run --clean --no-patch -- "your commands"
 When you run a build using crave run, it adds you to the build queue,
 where a build node comes, picks it up and compiles your build for you!
 
-##### How to clone device sources inside Crave Run Command
+### How to clone device sources inside Crave Run Command
 
 Options: officially supported devices, local manifests, sync scripts,
 and manual git clone.
@@ -358,7 +358,7 @@ lunch lineage_oxygen-eng; \
 m bacon"
 ```
 
-## Bonus: Building Unsupported ROM
+# Bonus: Building Unsupported ROM
 
 Rules for doing this:
 
@@ -387,9 +387,9 @@ riseup device_codename userdebug; \ 
 ascend"
 ```
 
-## Pulling Output
+# Pulling Output
 
-##### Automatic Method: Github Releases upload.sh script
+### Automatic Method: Github Releases upload.sh script
 
 - Enter the directory where you used crave run
 - Create token.txt with your github PAT in there(ensure it has necessary
@@ -416,7 +416,7 @@ before the above command
 export GH_UPLOAD_LIMIT="yourvalue"
 ```
 
-##### Automatic Method: Telegram upload.sh script
+### Automatic Method: Telegram upload.sh script
 
 - Enter the directory where you used crave run
 - [Set up
@@ -437,7 +437,7 @@ before the above command
 export TG_UPLOAD_LIMIT="yourvalue"
 ```
 
-##### Manual Method: How to pull output to Devspace CLI
+### Manual Method: How to pull output to Devspace CLI
 
 - Simply use the crave pull command inside the same directory as before:
 
