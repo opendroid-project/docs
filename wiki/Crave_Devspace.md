@@ -18,10 +18,10 @@ Right click somewhere blank on the folder and click on Open In Terminal.
 Alternatively,
 
 ```
-cd /d pathtocravefolder 
+cd /d Drive:\path\to\crave\folder\ 
 ```
 
-(replacing pathtocravefolder with the full or relative path to your
+(replacing `Drive:\path\to\crave\folder\` with the full or relative path to your
 crave folder)
 
 #### *Linux*
