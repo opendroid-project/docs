@@ -52,7 +52,7 @@ Open [sessions](https://foss.crave.io/app/#/session?team=14) tab and
 click on "Create Session/Connect" button.
 
 Now, [skip to the next
-part](https://opendroid.pugzarecute.com/wiki/Crave_Devspace#Setting_Up_The_Project)
+part](/wiki/Crave_Devspace#setting-up-the-project)
 after setting up tmux
 
 ### How to Prepare Environment
@@ -77,14 +77,8 @@ crave devspace
 
 - Follow all the steps except do not enter into Devspace CLI(crave
   devspace command).
-
-<!-- -->
-
 - Crave run, pull, etc should work on local machine as well(as long as
   crave is installed/set up along with a valid crave.conf)
-
-<!-- -->
-
 - You might also want to install google's repo tool:
 
 ```
@@ -215,7 +209,7 @@ built with
 
 Tip: You use --clean flag in crave run to reset the build storage as
 shown
-[here](https://opendroid.pugzarecute.com/wiki/Crave_Devspace#How_to_build_using_Crave_Run_Command)
+[here](/wiki/Crave_Devspace#how-to-build-using-crave-run-command)
 
 ### Crave.yaml
 
@@ -372,7 +366,7 @@ Example: Building risingOS 14
 
 1. Set up closest cousin project that crave supports. Since it's
 risingOS, you could use CipherOS or LineageOS for this (like
-[this](https://opendroid.pugzarecute.com/wiki/Crave_Devspace#Setting_Up_The_Project))
+[this](/wiki/Crave_Devspace#setting-up-the-project))
 using crave clone create.
 
 2. Run crave run command, but reinit your preferred rom inside
@@ -394,9 +388,6 @@ ascend"
 - Enter the directory where you used crave run
 - Create token.txt with your github PAT in there(ensure it has necessary
   permissions)
-
-<!-- -->
-
 - Use the upload script
 
 ```
