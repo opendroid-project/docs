@@ -46,6 +46,15 @@ mv ${PWD}/crave ${HOME}/bin/ 
 sudo ln -sf /home/${USER}/bin/crave /usr/bin/crave; sudo chmod +x /usr/bin/crave 
 ```
 
+#### *Mac*
+
+- If you're on macOS, run this command to install crave
+
+```
+brew install --cask crave
+```
+You will need to [install homebrew](https://brew.sh/) beforehand.
+
 #### *Web*
 
 Open [sessions](https://foss.crave.io/app/#/session?team=14) tab and
