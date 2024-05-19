@@ -24,6 +24,9 @@ cd /d Drive:\path\to\crave\folder\ 
 (replacing `Drive:\path\to\crave\folder\` with the full or relative path to your
 crave folder)
 
+
+Tip: If you use powershell and crave is not recognised but crave.exe exists in your current folder, you can use `./crave.exe` instead of `crave` to launch Devspace CLI. After that, go back to using `crave` when you enter Devspace CLI since it's a ubuntu environment with crave set up correctly.
+
 #### *Linux*
 
 - If you're on linux, run this command to download crave binary
