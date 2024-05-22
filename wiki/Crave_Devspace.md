@@ -18,7 +18,7 @@ Right click somewhere blank on the folder and click on Open In Terminal.
 Alternatively,
 
 ```
-cd /d Drive:\path\to\crave\folder\ 
+cd /d Drive:\path\to\crave\folder\ 
 ```
 
 (replacing `Drive:\path\to\crave\folder\` with the full or relative path to your
@@ -38,15 +38,15 @@ curl -s https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | b
 - Run these commands to install it systemwide
 
 ```
-mkdir -p ${HOME}/bin/
+mkdir -p ${HOME}/bin/
 ```
 
 ```
-mv ${PWD}/crave ${HOME}/bin/ 
+mv ${PWD}/crave ${HOME}/bin/ 
 ```
 
 ```
-sudo ln -sf /home/${USER}/bin/crave /usr/bin/crave; sudo chmod +x /usr/bin/crave 
+sudo ln -sf /home/${USER}/bin/crave /usr/bin/crave; sudo chmod +x /usr/bin/crave 
 ```
 
 #### *Mac*
@@ -82,7 +82,7 @@ directory, or wherever your terminal leads you when you first open it.
 3. Finally, to enter Devspace CLI: simply run
 
 ```
-crave devspace
+crave devspace
 ```
 
 ### Bonus: Building without Devspace CLI
@@ -94,16 +94,16 @@ crave devspace
 - You might also want to install google's repo tool:
 
 ```
-mkdir -p ~/.bin;
+mkdir -p ~/.bin;
 ```
 ```
 PATH="${HOME}/.bin:${PATH}";
 ```
 ```
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo;
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo;
 ```
 ```
-chmod a+rx ~/.bin/repo
+chmod a+rx ~/.bin/repo
 ```
 **Do Not Do This Inside Crave Devspace CLI!**
 ### Bonus: Using tmux
@@ -120,7 +120,7 @@ is a simple guide on how to use tmux:
 1. First use list to check the available projects:
 
 ```
-crave clone list  # note down the project id for the next step
+crave clone list  # note down the project id for the next step
 ```
 
 2. Then, use crave clone create for the project that you'd like to
@@ -128,14 +128,14 @@ build! This will automatically snapclone the latest source code for the
 project that you are trying to build in a matter of seconds
 
 ```
-crave clone create --projectID 72 /crave-devspaces/Lineage21
+crave clone create --projectID 72 /crave-devspaces/Lineage21
 ```
 
 After you're done building the ROM at the end of this guide, use crave
 clone destroy to delete the folder. Do not use rm -rf!
 
 ```
-crave clone destroy /crave-devspaces/Lineage21
+crave clone destroy /crave-devspaces/Lineage21
 ```
 
 ### Setting up the Project - Alternative Method
@@ -146,11 +146,11 @@ accordingly. Note that this method is not recommended if you're using
 Devspace CLI or RAS(web client)
 
 ```
-mkdir /crave-devspaces/Lineage21; cd /crave-devspaces/Lineage21
+mkdir /crave-devspaces/Lineage21; cd /crave-devspaces/Lineage21
 ```
 
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
+repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
 ```
 
 - At the time of writing, there was a known issue with LineageOS
@@ -162,13 +162,13 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --gi
 For lineageOS 21, run
 
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
+repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs --depth=1
 ```
 
 For lineageOS 20, run
 
 ```
-repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1
+repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1
 ```
 
 **Do not run repo sync or build the ROM here as it slows down devspace
@@ -269,9 +269,9 @@ Tip: If you find this part confusing, just run this command inside the
 folder we made before
 
 ```
-rm .repo/manifests/crave.yaml* || true; # Removes existing crave.yamls
+rm .repo/manifests/crave.yaml* || true; # Removes existing crave.yamls
 
-curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/yamls/crave.yaml.aosp # Downloads crave.yaml
+curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/yamls/crave.yaml.aosp # Downloads crave.yaml
 ```
 
 ### Optional: Setting up build environment
@@ -279,7 +279,7 @@ curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddri
 Use this command to enter into a machine with your source code mounted:
 
 ```
-crave ssh
+crave ssh
 ```
 
 This is good for changing files for the purpose of testing but this will
@@ -300,13 +300,13 @@ execute our commands, one by one.
 - Syntax:
 
 ```
-crave run --no-patch -- "your commands"
+crave run --no-patch -- "your commands"
 ```
 
 - If you'd like a clean build
 
 ```
-crave run --clean --no-patch -- "your commands"
+crave run --clean --no-patch -- "your commands"
 ```
 
 When you run a build using crave run, it adds you to the build queue,
@@ -322,24 +322,24 @@ and manual git clone.
   instructions for your device. You will need proprietary blobs, which
   can usually be found on TheMuppets repositories.
 
-``` 
-crave run  --no-patch -- "rm -rf .repo/local_manifests; \
-git clone https://github.com/TheMuppets/manifests --depth 1 -b lineage-21.0 .repo/local_manifests; \
+``` 
+crave run  --no-patch -- "rm -rf .repo/local_manifests; \
+git clone https://github.com/TheMuppets/manifests --depth 1 -b lineage-21.0 .repo/local_manifests; \
 /opt/crave/resync.sh; \
-source build/envsetup.sh; \
-breakfast Mi439; \
-brunch Mi439"   
+source build/envsetup.sh; \
+breakfast Mi439; \
+brunch Mi439"   
 ```
 
 - Local manifests example:
 
 ```
-crave run  --no-patch -- "rm -rf .repo/local_manifests; \
-git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
+crave run  --no-patch -- "rm -rf .repo/local_manifests; \
+git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
 /opt/crave/resync.sh; \
-source build/envsetup.sh; \
-lunch lineage_oxygen-eng; \
-m bacon"   
+source build/envsetup.sh; \
+lunch lineage_oxygen-eng; \
+m bacon"   
 ```
 
 [~marado](https://tilde.pt/~marado/) made an easy to follow guide on
@@ -355,13 +355,13 @@ to resync.sh
 - Git clone example:
 
 ```
-crave run  --no-patch -- "rm -rf .device/oem/codename kernel/oem/codename vendor/oem/codename; \
-git clone https://github.com/sounddrill31/android_device_oem_codename --depth 1 -b branchname device/oem/codename; \
-git clone https://github.com/sounddrill31/android_kernel_oem_codename --depth 1 -b branchname kernel/oem/codename; \
-git clone https://github.com/sounddrill31/android_vendor_oem_codename --depth 1 -b branchname vendor/oem/codename; \
-source build/envsetup.sh; \
-lunch lineage_oxygen-eng; \
-m bacon"
+crave run  --no-patch -- "rm -rf .device/oem/codename kernel/oem/codename vendor/oem/codename; \
+git clone https://github.com/sounddrill31/android_device_oem_codename --depth 1 -b branchname device/oem/codename; \
+git clone https://github.com/sounddrill31/android_kernel_oem_codename --depth 1 -b branchname kernel/oem/codename; \
+git clone https://github.com/sounddrill31/android_vendor_oem_codename --depth 1 -b branchname vendor/oem/codename; \
+source build/envsetup.sh; \
+lunch lineage_oxygen-eng; \
+m bacon"
 ```
 
 # Bonus: Building Unsupported ROM
@@ -384,12 +384,12 @@ using crave clone create.
 2. Run crave run command, but reinit your preferred rom inside
 
 ```
-crave run --no-patch -- "rm -rf .repo/local_manifests; \
-repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs -g default,-mips,-darwin,-notdefault; \
-git clone https://github.com/youraccount/local_manifests --depth 1 -b rising-14 .repo/local_manifests; \ 
+crave run --no-patch -- "rm -rf .repo/local_manifests; \
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs -g default,-mips,-darwin,-notdefault; \
+git clone https://github.com/youraccount/local_manifests --depth 1 -b rising-14 .repo/local_manifests; \ 
 /opt/crave/resync.sh; \
-source build/envsetup.sh; \
-riseup device_codename userdebug; \ 
+source build/envsetup.sh; \
+riseup device_codename userdebug; \ 
 ascend"
 ```
 
@@ -403,7 +403,7 @@ ascend"
 - Use the upload script
 
 ```
-bash /opt/crave/github-actions/upload.sh 'tag' 'device' 'repository' 'release title' 'extra files'
+bash /opt/crave/github-actions/upload.sh 'tag' 'device' 'repository' 'release title' 'extra files'
 ```
 
 (Replace tag with the tag you want your release to use, device with the
@@ -416,7 +416,7 @@ Tip: By default, size limit is set to 2147483648. To change it, run this
 before the above command
 
 ```
-export GH_UPLOAD_LIMIT="yourvalue"
+export GH_UPLOAD_LIMIT="yourvalue"
 ```
 
 ### Automatic Method: Telegram upload.sh script
@@ -427,7 +427,7 @@ export GH_UPLOAD_LIMIT="yourvalue"
 - Use the upload script
 
 ```
-/opt/crave/telegram/upload.sh 'device' 'extra files'
+/opt/crave/telegram/upload.sh 'device' 'extra files'
 ```
 
 Uploads will land in your saved messages. You can find the source code
@@ -437,7 +437,7 @@ Tip: By default, size limit is set to 2147483648. To change it, run this
 before the above command
 
 ```
-export TG_UPLOAD_LIMIT="yourvalue"
+export TG_UPLOAD_LIMIT="yourvalue"
 ```
 
 ### Manual Method: How to pull output to Devspace CLI
@@ -445,11 +445,11 @@ export TG_UPLOAD_LIMIT="yourvalue"
 - Simply use the crave pull command inside the same directory as before:
 
 ```
-crave pull out/target/product/*/*.zip
+crave pull out/target/product/*/*.zip
 ```
 
 ```
-crave pull out/target/product/*/*.img
+crave pull out/target/product/*/*.img
 ```
 
 - This will pull the built zip file to your devspace CLI from the build
