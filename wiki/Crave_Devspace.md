@@ -271,7 +271,7 @@ folder we made before
 ```
 rm .repo/manifests/crave.yaml* || true; # Removes existing crave.yamls
 
-curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/yamls/crave.yaml.aosp # Downloads crave.yaml
+curl -o .repo/manifests/crave.yaml https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/configs/crave/crave.yaml.aosp # Downloads crave.yaml
 ```
 
 ### Optional: Setting up build environment
