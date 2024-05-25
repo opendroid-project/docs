@@ -1,4 +1,4 @@
-### Crave.io Community:
+### Crave.io Community
 - [Discord](https://discord.crave.io)
 - [Telegram](https://t.me/ROM_builders)
 
@@ -9,6 +9,7 @@
 - [Bringup/FW chat(Telegram)](https://t.me/androidbringup)
 - [AndroidRom_developers(Telegram)](https://t.me/bestandroiddevs)
 
+### General Etiquette
 Because these are 3rd party chat groups, remember to follow these while/before asking for help:
 - Be respectful
 - Do some research
