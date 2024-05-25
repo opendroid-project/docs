@@ -16,9 +16,12 @@ Crave resources:
 - [Crave AOSP
   Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
-Useful Resources:
+Information and guides:
 - [Glossary of key
   terms](/wiki/Glossary)
+- [Debugging/Taking Logs](/wiki/Debugging)
+
+Useful Resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
