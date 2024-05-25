@@ -16,15 +16,19 @@
 - reboot to twrp
 - connect phone to the PC
 - run command from
-*nix: adb push ~/.android/adbkey.pub /data/misc/adb/adb_keys
-windows: adb push C:\Users\%PutHereYourUsername%\.android\adbkey.pub /data/misc/adb/adb_keys
+
+*nix: ```adb push ~/.android/adbkey.pub /data/misc/adb/adb_keys```
+
+windows: ```adb push C:\Users\%PutHereYourUsername%\.android\adbkey.pub /data/misc/adb/adb_keys```
 - now you can take logcat logs
 
 ### Stuck/bootloop at splash
 - reboot to twrp right after stuck-splash or bootloop
 - try to find that logs:
-/sys/fs/pstore/console-ramoops
-/proc/last_kmsg
+
+`/sys/fs/pstore/console-ramoops`
+
+`/proc/last_kmsg`
 
 - copy logs to PC
 (for sample, with command "adb pull /proc/last_kmsg lastkmsg.txt")
