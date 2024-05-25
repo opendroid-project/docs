@@ -67,6 +67,10 @@ Now, [skip to the next
 part](/wiki/Crave_Devspace#setting-up-the-project)
 after setting up tmux
 
+For menu, swipe from the middle of the left side of your phone. If you're on a computer/have access to a keyboard, press `Ctrl+Alt+Shift`. This menu allows you to customize the terminal, and switch input method, like phone keyboard instead of emulated one. 
+
+Crave RAS is built upon [Apache Guacamole](https://guacamole.apache.org/)
+
 ### How to Prepare Environment
 
 2. Now open up your browser again and navigate back to foss.crave.io
