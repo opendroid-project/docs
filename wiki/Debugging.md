@@ -2,9 +2,9 @@
 
 ### Stuck on boot animation 
 (or need regular logs)
-- in twrp mount System and delete file /system/phh/secure and then reboot
+- in twrp mount System and delete file `/system/phh/secure` and then reboot
 - while you see bootanimation connect phone to PC
-- adb logcat -d all > logs.txt
+- `adb logcat -d all > logs.txt`
 
 ### Stuck on bootanimation/splash 
 (or need regular logs but ADB is dead)
