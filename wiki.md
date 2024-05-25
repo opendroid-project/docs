@@ -20,6 +20,9 @@ Useful Resources:
 - [Glossary of key
   terms](/wiki/Glossary)
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
+- [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
+- [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
+- [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net/)
 
 Chat Groups:
 - [Get Help](/wiki/Get_Help)
