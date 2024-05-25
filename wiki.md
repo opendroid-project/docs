@@ -20,3 +20,6 @@ Useful Resources:
 - [Glossary of key
   terms](/wiki/Glossary)
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
+
+Chat Groups:
+- [Get Help](/wiki/Get_Help)
