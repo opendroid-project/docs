@@ -13,6 +13,8 @@ This guide attempts to help new and old users with android development and using
 Crave resources:
 - [Crave Devspaces
   CLI](/wiki/Crave_Devspace)
+- [Crave Devspaces
+  CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
 - [Crave AOSP
   Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
