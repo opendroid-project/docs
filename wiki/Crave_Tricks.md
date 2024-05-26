@@ -5,49 +5,52 @@ The crave client has a flag called link-services which allows you to hook-up a p
 ### VS-Code Web
 In this section, we'll be using code-server(preinstalled on devspace CLI) to start a session.
 
-#### Step 1
+#### Generate Configuration
 Run `code-server` to generate the config file
 
-#### Step 2
+#### Kill Session
 Stop the command/exit out of the session
 
 Go to the dashboard, Sessions Tab, and stop your session
 
-#### Step 3
+#### Connect to Session
 Now, connect to your devspace with this command
 
 ```crave devspace --link-service http:8080:8080```
  
-Also run this command to turn off password authentication 
+#### Change Default Password
+
+run this command to turn off password authentication 
 
 ```sed -i.bak 's/auth: password/auth: none/' ~/.config/code-server/config.yaml```
 
 (taken from official code-server docs)
 
-Alternatively, you could set a password in ~/.config/code-server/config.yaml inside devspace
+Alternatively, you could set a password in `~/.config/code-server/config.yaml` inside devspace
 
-#### Step 4
+#### Open a Tmux Window
 Open a tmux and attach to it
 ```tmux```
 
 (to reconnect to this, simply run `tmux a -t 0` since it is the first running tmux session)
 
-#### Step 5
+#### Start code-server
 Run code-server
 ```code-server```
 
-#### Step 6
+#### Connect
 Connect to it through your browser
 http://localhost:8080
 
 ### VNC
 Same steps as VS-Code Web except you don't need to run anything
 
-#### Step 1
+#### Connect to Session
 Kill old session(refer to step 2 of VS-Code Web section) and then connect to your devspace with this command:
 
 ```crave devspace --link-service vnc:5900:5900```
 
+#### Check supervisord
 Check status of supervisord with this: 
 
 ```sudo service supervisor status```
@@ -56,6 +59,7 @@ If it says it is not running, start it using this command
 
 ```sudo service supervisor start```
 
+#### VNC Client
 Now, connect as per instructions [here](https://foss.crave.io/docs/devspaces/#vnc)
 
 
