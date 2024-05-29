@@ -66,8 +66,7 @@ Open [sessions](https://foss.crave.io/app/#/session?team=14) tab and
 click on "Create Session/Connect" button.
 
 Now, [skip to the next
-part](/wiki/Crave_Devspace#setting-up-the-project)
-after setting up tmux
+section](/wiki/Crave_Devspace#setting-up-the-project) without worrying about entering Devspace CLI.
 
 For menu, swipe from the middle of the left side of your phone. If you're on a computer/have access to a keyboard, press `Ctrl+Alt+Shift`. This menu allows you to customize the terminal, and switch input method, like phone keyboard instead of emulated one. 
 
