@@ -141,7 +141,7 @@ clone destroy to delete the folder. Do not use rm -rf!
 crave clone destroy /crave-devspaces/Lineage21
 ```
 
-# Building Using Crave Run command
+## Building Using Crave Run command
 
 ### How to build using Crave Run Command
 
