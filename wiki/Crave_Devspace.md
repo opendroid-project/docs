@@ -1,4 +1,6 @@
-# Setting Up Crave Devspace CLI
+# Getting Started
+
+## Setting Up Crave Devspace CLI
 
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
@@ -117,9 +119,7 @@ is a simple guide on how to use tmux:
 
 <https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>
 
-# Setting Up The Project
-
-### Setting up the Project
+## Setting Up The Project
 
 1. First use list to check the available projects:
 
@@ -141,6 +141,180 @@ clone destroy to delete the folder. Do not use rm -rf!
 ```
 crave clone destroy /crave-devspaces/Lineage21
 ```
+
+# Building Using Crave Run command
+
+### How to build using Crave Run Command
+
+Simply use crave run! On a normal server, we'd be running commands one
+by one. But since crave uses a queue system, we run all the commands in
+one go, and wait for our turn in queue. Then, the build node will
+execute our commands, one by one.
+
+- Syntax:
+
+```
+crave run --no-patch -- "your commands"
+```
+
+- If you'd like a clean build
+
+```
+crave run --clean --no-patch -- "your commands"
+```
+
+When you run a build using crave run, it adds you to the build queue,
+where a build node comes, picks it up and compiles your build for you!
+
+### How to clone device sources inside Crave Run Command
+
+Options: officially supported devices, local manifests, sync scripts,
+and manual git clone.
+
+- Officially Supported devices: They will automatically clone source
+  code through breakfast or brunch commands, just refer to the official
+  instructions for your device. You will need proprietary blobs, which
+  can usually be found on TheMuppets repositories.
+
+``` 
+crave run  --no-patch -- "rm -rf .repo/local_manifests; \
+git clone https://github.com/TheMuppets/manifests --depth 1 -b lineage-21.0 .repo/local_manifests; \
+/opt/crave/resync.sh; \
+source build/envsetup.sh; \
+breakfast Mi439; \
+brunch Mi439"   
+```
+
+- Local manifests example:
+
+```
+crave run  --no-patch -- "rm -rf .repo/local_manifests; \
+git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
+/opt/crave/resync.sh; \
+source build/envsetup.sh; \
+lunch lineage_oxygen-eng; \
+m bacon"   
+```
+
+[~marado](https://tilde.pt/~marado/) made an easy to follow guide on
+making your own local manifests over at
+[tilde.pt](https://tilde.pt/~marado/blog/repo-using-a-local-manifest.html).
+
+Local manifests rely on repo sync. We have made a simple script to repo
+sync while avoiding majority of conflicts which arise due to uncommitted
+changes, or when building a different ROM. You can find the source code
+to resync.sh
+[here](https://github.com/accupara/docker-images/blob/master/aosp/common/resync.sh)
+
+- Git clone example:
+
+```
+crave run  --no-patch -- "rm -rf .device/oem/codename kernel/oem/codename vendor/oem/codename; \
+git clone https://github.com/sounddrill31/android_device_oem_codename --depth 1 -b branchname device/oem/codename; \
+git clone https://github.com/sounddrill31/android_kernel_oem_codename --depth 1 -b branchname kernel/oem/codename; \
+git clone https://github.com/sounddrill31/android_vendor_oem_codename --depth 1 -b branchname vendor/oem/codename; \
+source build/envsetup.sh; \
+lunch lineage_oxygen-eng; \
+m bacon"
+```
+
+## Bonus: Building Unsupported ROM
+
+Rules for doing this:
+
+- Do not use rm -rf * or cd into another folder in crave run before
+  syncing, no matter who tells you to
+- Fix sync conflicts instead of running the above commands
+- (General Rule) Do not queue multiple builds at once
+- Sync android 14 ROMs on Android 14 base project only
+
+Example: Building risingOS 14
+
+1. Set up closest cousin project that crave supports. Since it's
+risingOS, you could use CipherOS or LineageOS for this (like
+[this](/wiki/Crave_Devspace#setting-up-the-project))
+using crave clone create.
+
+2. Run crave run command, but reinit your preferred rom inside
+
+```
+crave run --no-patch -- "rm -rf .repo/local_manifests; \
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs -g default,-mips,-darwin,-notdefault; \
+git clone https://github.com/youraccount/local_manifests --depth 1 -b rising-14 .repo/local_manifests; \ 
+/opt/crave/resync.sh; \
+source build/envsetup.sh; \
+riseup device_codename userdebug; \ 
+ascend"
+```
+
+## Pulling Output
+
+### Automatic Method: Github Releases upload.sh script
+
+- Enter the directory where you used crave run
+- Create token.txt with your github PAT in there(ensure it has necessary
+  permissions)
+- Use the upload script
+
+```
+bash /opt/crave/github-actions/upload.sh 'tag' 'device' 'repository' 'release title' 'extra files'
+```
+
+(Replace tag with the tag you want your release to use, device with the
+device's codename, repository with the link to the github repo and
+release title with your preferred title. Extra files can be left blank)
+
+You can find the source code for the script [here](https://github.com/accupara/docker-images/blob/master/aosp/common/upload.sh)
+
+Tip: By default, size limit is set to 2147483648. To change it, run this
+before the above command
+
+```
+export GH_UPLOAD_LIMIT="yourvalue"
+```
+
+### Automatic Method: Telegram upload.sh script
+
+- Enter the directory where you used crave run
+- [Set up
+  telegram-upload](https://github.com/Nekmo/telegram-upload#-usage)
+- Use the upload script
+
+```
+/opt/crave/telegram/upload.sh 'device' 'extra files'
+```
+
+Uploads will land in your saved messages. You can find the source code
+for the script [here](https://github.com/accupara/docker-images/blob/master/aosp/common/tgup.sh)
+
+Tip: By default, size limit is set to 2147483648. To change it, run this
+before the above command
+
+```
+export TG_UPLOAD_LIMIT="yourvalue"
+```
+
+### Manual Method: How to pull output to Devspace CLI
+
+- Simply use the crave pull command inside the same directory as before:
+
+```
+crave pull out/target/product/*/*.zip
+```
+
+```
+crave pull out/target/product/*/*.img
+```
+
+- This will pull the built zip file to your devspace CLI from the build
+  node.
+
+<!-- -->
+
+- From here, you can upload using github releases, sourceforge,
+  telegram-upload, etc
+
+# Advanced
 
 ### Setting up the Project - Alternative Method
 
@@ -292,174 +466,3 @@ be wiped if you do a clean build.
 **Do not run repo sync or build the ROM here, wait in the crave run
 queue for a more powerful machine.**
 
-# Building Using Crave Run command
-
-### How to build using Crave Run Command
-
-Simply use crave run! On a normal server, we'd be running commands one
-by one. But since crave uses a queue system, we run all the commands in
-one go, and wait for our turn in queue. Then, the build node will
-execute our commands, one by one.
-
-- Syntax:
-
-```
-crave run --no-patch -- "your commands"
-```
-
-- If you'd like a clean build
-
-```
-crave run --clean --no-patch -- "your commands"
-```
-
-When you run a build using crave run, it adds you to the build queue,
-where a build node comes, picks it up and compiles your build for you!
-
-### How to clone device sources inside Crave Run Command
-
-Options: officially supported devices, local manifests, sync scripts,
-and manual git clone.
-
-- Officially Supported devices: They will automatically clone source
-  code through breakfast or brunch commands, just refer to the official
-  instructions for your device. You will need proprietary blobs, which
-  can usually be found on TheMuppets repositories.
-
-``` 
-crave run  --no-patch -- "rm -rf .repo/local_manifests; \
-git clone https://github.com/TheMuppets/manifests --depth 1 -b lineage-21.0 .repo/local_manifests; \
-/opt/crave/resync.sh; \
-source build/envsetup.sh; \
-breakfast Mi439; \
-brunch Mi439"   
-```
-
-- Local manifests example:
-
-```
-crave run  --no-patch -- "rm -rf .repo/local_manifests; \
-git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
-/opt/crave/resync.sh; \
-source build/envsetup.sh; \
-lunch lineage_oxygen-eng; \
-m bacon"   
-```
-
-[~marado](https://tilde.pt/~marado/) made an easy to follow guide on
-making your own local manifests over at
-[tilde.pt](https://tilde.pt/~marado/blog/repo-using-a-local-manifest.html).
-
-Local manifests rely on repo sync. We have made a simple script to repo
-sync while avoiding majority of conflicts which arise due to uncommitted
-changes, or when building a different ROM. You can find the source code
-to resync.sh
-[here](https://github.com/accupara/docker-images/blob/master/aosp/common/resync.sh)
-
-- Git clone example:
-
-```
-crave run  --no-patch -- "rm -rf .device/oem/codename kernel/oem/codename vendor/oem/codename; \
-git clone https://github.com/sounddrill31/android_device_oem_codename --depth 1 -b branchname device/oem/codename; \
-git clone https://github.com/sounddrill31/android_kernel_oem_codename --depth 1 -b branchname kernel/oem/codename; \
-git clone https://github.com/sounddrill31/android_vendor_oem_codename --depth 1 -b branchname vendor/oem/codename; \
-source build/envsetup.sh; \
-lunch lineage_oxygen-eng; \
-m bacon"
-```
-
-# Bonus: Building Unsupported ROM
-
-Rules for doing this:
-
-- Do not use rm -rf * or cd into another folder in crave run before
-  syncing, no matter who tells you to
-- Fix sync conflicts instead of running the above commands
-- (General Rule) Do not queue multiple builds at once
-- Sync android 14 ROMs on Android 14 base project only
-
-Example: Building risingOS 14
-
-1. Set up closest cousin project that crave supports. Since it's
-risingOS, you could use CipherOS or LineageOS for this (like
-[this](/wiki/Crave_Devspace#setting-up-the-project))
-using crave clone create.
-
-2. Run crave run command, but reinit your preferred rom inside
-
-```
-crave run --no-patch -- "rm -rf .repo/local_manifests; \
-repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs -g default,-mips,-darwin,-notdefault; \
-git clone https://github.com/youraccount/local_manifests --depth 1 -b rising-14 .repo/local_manifests; \ 
-/opt/crave/resync.sh; \
-source build/envsetup.sh; \
-riseup device_codename userdebug; \ 
-ascend"
-```
-
-# Pulling Output
-
-### Automatic Method: Github Releases upload.sh script
-
-- Enter the directory where you used crave run
-- Create token.txt with your github PAT in there(ensure it has necessary
-  permissions)
-- Use the upload script
-
-```
-bash /opt/crave/github-actions/upload.sh 'tag' 'device' 'repository' 'release title' 'extra files'
-```
-
-(Replace tag with the tag you want your release to use, device with the
-device's codename, repository with the link to the github repo and
-release title with your preferred title. Extra files can be left blank)
-
-You can find the source code for the script [here](https://github.com/accupara/docker-images/blob/master/aosp/common/upload.sh)
-
-Tip: By default, size limit is set to 2147483648. To change it, run this
-before the above command
-
-```
-export GH_UPLOAD_LIMIT="yourvalue"
-```
-
-### Automatic Method: Telegram upload.sh script
-
-- Enter the directory where you used crave run
-- [Set up
-  telegram-upload](https://github.com/Nekmo/telegram-upload#-usage)
-- Use the upload script
-
-```
-/opt/crave/telegram/upload.sh 'device' 'extra files'
-```
-
-Uploads will land in your saved messages. You can find the source code
-for the script [here](https://github.com/accupara/docker-images/blob/master/aosp/common/tgup.sh)
-
-Tip: By default, size limit is set to 2147483648. To change it, run this
-before the above command
-
-```
-export TG_UPLOAD_LIMIT="yourvalue"
-```
-
-### Manual Method: How to pull output to Devspace CLI
-
-- Simply use the crave pull command inside the same directory as before:
-
-```
-crave pull out/target/product/*/*.zip
-```
-
-```
-crave pull out/target/product/*/*.img
-```
-
-- This will pull the built zip file to your devspace CLI from the build
-  node.
-
-<!-- -->
-
-- From here, you can upload using github releases, sourceforge,
-  telegram-upload, etc
