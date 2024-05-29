@@ -90,27 +90,6 @@ directory, or wherever your terminal leads you when you first open it.
 crave devspace
 ```
 
-### Bonus: Building without Devspace CLI
-
-- Follow all the steps except do not enter into Devspace CLI(crave
-  devspace command).
-- Crave run, pull, etc should work on local machine as well(as long as
-  crave is installed/set up along with a valid crave.conf)
-- You might also want to install google's repo tool:
-
-```
-mkdir -p ~/.bin;
-```
-```
-PATH="${HOME}/.bin:${PATH}";
-```
-```
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo;
-```
-```
-chmod a+rx ~/.bin/repo
-```
-**Do Not Do This Inside Crave Devspace CLI!**
 ### Bonus: Using tmux
 
 Using tmux is recommended to quickly view builds, multitask, etc. Here
@@ -315,12 +294,32 @@ crave pull out/target/product/*/*.img
 
 # Advanced
 
+### Bonus: Building without Devspace CLI
+
+- Follow all the steps except do not enter into Devspace CLI(crave
+  devspace command).
+- Crave run, pull, etc should work on local machine as well(as long as
+  crave is installed/set up along with a valid crave.conf)
+- You might also want to install google's repo tool:
+
+```
+mkdir -p ~/.bin;
+```
+```
+PATH="${HOME}/.bin:${PATH}";
+```
+```
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo;
+```
+```
+chmod a+rx ~/.bin/repo
+```
+**Do Not Do This Inside Crave Devspace CLI!**
+
+
 ### Setting up the Project - Alternative Method
 
-Instead of doing the above step, you could directly repo init a
-supported ROM too! Crave will see git project is set up and assign
-accordingly. Note that this method is not recommended if you're using
-Devspace CLI or RAS(web client)
+Instead of setting up through crave clone create, you could directly repo init a supported ROM too! Crave will see git project is set up and assign accordingly. Note that this method is not recommended if you're using Devspace CLI or RAS(web client). This makes sense when you're trying to trigger without devspace
 
 ```
 mkdir /crave-devspaces/Lineage21; cd /crave-devspaces/Lineage21
