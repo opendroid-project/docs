@@ -8,17 +8,21 @@ We welcome new content, restructuring ideas and improvements(even fixes to small
 Official Chat: 
 [OpenDroid Telegram](https://t.me/opendroidwiki)
 
+### Wiki Contents
+
 Wiki Contents can be found here:
+
 [Site Contents](https://github.com/opendroid-project/docs)
 
 Wiki content licensed is under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/) unless otherwise noted
 
-
+### Site Source Code
 
 Source Code of the site can be found here:
+
 [Site Source Code](https://github.com/opendroid-project/opendroid-web)
 
- This website is licensed under [GNU LGPLv2](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt)
+This website is licensed under [GNU LGPLv2](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt)
 
  ## Using Our Work
  You are free to use, share and redistribute our work, as long as it is fairly used according to the above licenses. 
