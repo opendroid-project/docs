@@ -4,12 +4,16 @@
 
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
-- DM one of the admins on [discord](https://discord.crave.io) since
-  self-signup is disabled
+DM one of the admins on [discord](https://discord.crave.io) since self-signup is disabled.
+Remember to share the following:
+- Your name
+- Email
+- Git profile
+- Devices you plan to build for
 
 ### Downloading
 
-1. Great! Now head on over to [foss.crave.io](https://Foss.crave.io)
+1. Now head on over to [foss.crave.io](https://Foss.crave.io)
 and press the Downloads button in the Left Hand Side menu.
 
 #### *Windows*
