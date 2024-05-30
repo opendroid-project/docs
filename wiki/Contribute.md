@@ -11,5 +11,16 @@ Official Chat:
 Wiki Contents can be found here:
 [Site Contents](https://github.com/opendroid-project/docs)
 
+Wiki content licensed is under [Creative Commons Attribution-ShareAlike](https://creativecommons.org/licenses/by-sa/4.0/) unless otherwise noted
+
+
+
 Source Code of the site can be found here:
-[Site Code](https://github.com/opendroid-project/opendroid-web)
+[Site Source Code](https://github.com/opendroid-project/opendroid-web)
+
+ This website is licensed under [GNU LGPLv2](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt)
+
+ ## Using Our Work
+ You are free to use, share and redistribute our work, as long as it is fairly used according to the above licenses. 
+ 
+ If you find any violations to the above licenses, please let us know in the official chat.
