@@ -15,6 +15,8 @@ Crave resources:
   CLI](/wiki/Crave_Devspace)
 - [Crave Devspaces
   CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
+- [Crave Devspaces
+  CLI - Signing Builds](/wiki/Crave_Signing)
 - [Crave AOSP
   Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
