@@ -197,7 +197,7 @@ m bacon"
 ```
 
 ## Bonus: Building Unsupported ROM
-
+This is discouraged as it causes many sync conflicts and is a bit difficult to debug, however, it is not against the rules.
 Rules for doing this:
 
 - Do not use rm -rf * or cd into another folder in crave run before
