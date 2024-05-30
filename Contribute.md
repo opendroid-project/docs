@@ -1,9 +1,9 @@
 # Contribute to OpenDroid
 Do you feel like the content is incomplete, or hard to read? Or do you feel like it is not up to the mark or inadequate? 
 
-Please note that OpenDroid is run by community members(often 1-2 people at most) so instead of harassing them via DMs(You know who you are), please try to contribute some content yourself!
+Please note that OpenDroid is run by community members(often 1-2 people at most) so instead of harassing them via DMs(You know who you are), please try to contribute some content yourself! However, we are quite open to non-hateful constructive criticism. 
 
-We are very open to new content, restructuring ideas and improvements(especially spelling mistakes) so please do not hesitate to contribute or contact us. 
+We welcome new content, restructuring ideas and improvements(especially spelling mistakes) so please do not hesitate to contribute or contact us. 
 
 Official Chat: 
 [OpenDroid Telegram](https://t.me/opendroidwiki)
