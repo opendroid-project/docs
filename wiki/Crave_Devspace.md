@@ -5,7 +5,7 @@
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
 DM one of the admins on [discord](https://discord.crave.io) since self-signup is disabled.
-Remember to share the following:
+Remember to share the following for an invite:
 - Your name
 - Email
 - Git profile
