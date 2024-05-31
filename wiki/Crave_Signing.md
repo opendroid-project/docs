@@ -6,11 +6,11 @@ To begin with signing there are two parts:
 1. Generating Keys using backblaze_keygen
 2. Signing the build using crave_sign
    
-## 1. Generating Keys using backblaze_keygen
+## Generating Keys using backblaze_keygen
 
 **Attention to Readers :**
 **This script is meant to be run on Devspace CLI not on while building rom**
-**Neither me [sppidy](https://github.com/sppidy) who made the script nor Crave team members are reposnsible if you run this script during build and leak your sensitive infos**
+**Neither me [sppidy](https://github.com/sppidy) who made the script nor Crave team members are responsible if you run this script during build and leak your sensitive info**
 
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
 1. Prompts for passwords.
@@ -31,8 +31,10 @@ This script automates the process of generating, encrypting, and uploading Andro
    Run the script using the following command:
 
    ```sh
-   backblaze_keygen
+   /opt/crave/backblaze_keygen.sh
    ```
+
+   Source code to script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/backblaze_keygen.sh)
 
 2. **Password Prompts:**
    - **Password:** Enter the password to be used for key generation and encryption.
@@ -155,7 +157,7 @@ Cleared ENV Variables
 
 This output indicates that the keys have been successfully generated, encrypted, uploaded, and that the temporary files and environment variables have been cleaned up.
 
-## 2. Signing the build using crave_sign
+## Signing the build using crave_sign
 This script called crave_sign.sh automates the process of signing Android APK and APEX files using keys stored in a Backblaze B2 bucket and also sign your builds using the release keys from Backblaze B2 Bucket. Below are the steps to use this script effectively.
 
 ### Prerequisites
@@ -171,23 +173,54 @@ This script called crave_sign.sh automates the process of signing Android APK an
 
 ### Setting Environment Variables
 
-Export the required environment variables in your shell:
+Create a crave.yaml inside .repo/manifests with the following contents:
 
-```sh
-export BUCKET_NAME="your_bucket_name"
-export KEY_ENCRYPTION_PASSWORD="your_key_encryption_password"
-export BKEY_ID="your_bkey_id"
-export BAPP_KEY="your_bapp_key"
 ```
+LOS 21:
+  ignoreClientHostname: true
+  env:
+    BUCKET_NAME: your_bucket_name
+    KEY_ENCRYPTION_PASSWORD: your_key_encryption_password
+    BKEY_ID: your_bkey_id
+    BAPP_KEY: your_bapp_key
+```
+
+Replace "LOS 21" with your base project's name. Remember to use the correct name, get it from `crave clone list`. 
+
+Also remember to replace the placeholder credentials with actual values.
+
+It is also recommended to set ignoreClientHostname to preserve workflow persistence. Read more about it [here](Crave_Devspace#workspace-persistence).
+
+If you're using sounddrill's crave_aosp_builder github actions workflow, you can set crave.yaml through secrets. Steps:
+
+- Go to (repo) Settings -> Security -> Secrets and Variables -> Actions
+
+- Set repository secret called CUSTOM_YAML
+
+- Enter the contents of your crave.yaml
 
 ### Running the Script
 
 1. **Execute the Script:**
 
-   Run the script using the following command:
+   Run the script using the following command inside crave run:
 
    ```sh
    crave_sign
+   ```
+
+   Example:
+   ```
+   crave run  --no-patch -- "rm -rf .repo/local_manifests; \
+   git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
+   /opt/crave/resync.sh; \
+
+   # Call Signing Script
+   /opt/crave/crave_sign.sh; \
+ 
+   source build/envsetup.sh; \
+   lunch lineage_oxygen-eng; \
+   m bacon"
    ```
 
 2. **Script Workflow:**
@@ -197,6 +230,8 @@ export BAPP_KEY="your_bapp_key"
    - **Sign APK and APEX Files:** Signs the APK and APEX files using the retrieved and decrypted keys.
    - **Generate OTA Update Package:** Creates an OTA update package from the signed files.
    - **Clean Up:** Removes the temporary directory containing the certificates and unsets environment variables.
+
+   Source code to script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/crave_sign.sh)
 
 ### Cleanup
 
