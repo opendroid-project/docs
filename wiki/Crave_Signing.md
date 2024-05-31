@@ -1,6 +1,6 @@
 # Signing Your builds in Crave
 
-This script called crave_sign.sh automates the process of signing Android APK and APEX files using keys stored in a Backblaze B2 bucket and also sign your builds using the release keys. Below are the steps to use this script effectively.
+This script called crave_sign.sh automates the process of signing Android APK and APEX files using keys stored in a Backblaze B2 bucket and also sign your builds using the release keys from Backblaze B2 Bucket. Below are the steps to use this script effectively.
 
 ## Prerequisites
 
