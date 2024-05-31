@@ -207,7 +207,7 @@ If you're using sounddrill's crave_aosp_builder github actions workflow, you can
    Run the script using the following command inside crave run:
 
    ```sh
-   crave_sign
+   /opt/crave/crave_sign.sh
    ```
 
    Example:
@@ -215,13 +215,13 @@ If you're using sounddrill's crave_aosp_builder github actions workflow, you can
    crave run  --no-patch -- "rm -rf .repo/local_manifests; \
    git clone https://github.com/sounddrill31/reponame --depth 1 -b branchname .repo/local_manifests; \
    /opt/crave/resync.sh; \
-
-   # Call Signing Script
-   /opt/crave/crave_sign.sh; \
  
    source build/envsetup.sh; \
-   lunch lineage_oxygen-eng; \
-   m bacon"
+   
+   # Sign Script instead of mka bacon
+   breakfast oxygen userdebug; \
+   mka target-files-package otatools; \
+   /opt/crave/crave_sign.sh"
    ```
 
 2. **Script Workflow:**
