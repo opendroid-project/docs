@@ -15,27 +15,14 @@ To begin with signing there are two parts:
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
 1. Prompts for passwords.
 2. Generates and encrypts keys.
-3. Authenticates with Backblaze B2.
-4. Uploads the keys to Backblaze B2.
-5. Cleans up temporary files and environment variables.
+3. Prompts for B2 Key ID, B2 Application Key and B2 Bucket Name.
+4. Authenticates with Backblaze B2.
+5. Uploads the keys to Backblaze B2.
+6. Cleans up temporary files and environment variables.
 
 ### Prerequisites
 
 1. **Backblaze B2 CLI:** Ensure you have the Backblaze B2 CLI installed. If not, the script will attempt to install it using `pip`.
-2. **Environment Variables:** Set the following environment variables before running the script:
-   - `BUCKET_NAME`: Name of the Backblaze B2 bucket to store the certificates.
-   - `BKEY_ID`: Backblaze B2 application key ID.
-   - `BAPP_KEY`: Backblaze B2 application key.
-
-### Setting Environment Variables
-
-Export the required environment variables in your shell:
-
-```sh
-export BUCKET_NAME="your_bucket_name"
-export BKEY_ID="your_bkey_id"
-export BAPP_KEY="your_bapp_key"
-```
 
 ### Running the Script
 
@@ -57,6 +44,7 @@ export BAPP_KEY="your_bapp_key"
    - **Encrypt Password:** The entered password is encrypted using OpenSSL and stored in the temporary directory.
    - **Generate Keys:** The script generates keys with the specified password.
    - **Install B2 CLI:** If the B2 CLI is not installed, the script installs it.
+   - **Credentials For B2:** You will be prompted for B2 Credentials.
    - **Authenticate B2:** The script logs into Backblaze B2 using the provided credentials.
    - **Upload Keys:** The keys are uploaded to the specified B2 bucket.
    - **Clean Up:** The script removes the temporary directory containing the certificates and unsets environment variables.
@@ -68,12 +56,98 @@ Upon successful execution, the script outputs a confirmation message and ensures
 ### Example Output
 
 ```sh
-Enter the password:
-Enter the Encryption Password:
-B2 SDK Logging in...
+Enter the password: ********
+Enter the Encryption Password: ********
+
+Creating certificate directory: /tmp/android-certs.XYZ123
+
+Encrypting password and storing it at: /tmp/android-certs.XYZ123/password.enc
+
+Generating keys:
+Generating key for bluetooth
+Generating key for cyngn-app
+Generating key for media
+Generating key for networkstack
+Generating key for platform
+Generating key for releasekey
+Generating key for sdk_sandbox
+Generating key for shared
+Generating key for testcert
+Generating key for testkey
+Generating key for verity
+
+Generating APEX keys:
+Generating key for com.android.adbd
+Generating key for com.android.adservices
+Generating key for com.android.adservices.api
+Generating key for com.android.appsearch
+Generating key for com.android.art
+Generating key for com.android.bluetooth
+Generating key for com.android.btservices
+Generating key for com.android.cellbroadcast
+Generating key for com.android.compos
+Generating key for com.android.configinfrastructure
+Generating key for com.android.connectivity.resources
+Generating key for com.android.conscrypt
+Generating key for com.android.devicelock
+Generating key for com.android.extservices
+Generating key for com.android.graphics.pdf
+Generating key for com.android.hardware.biometrics.face.virtual
+Generating key for com.android.hardware.biometrics.fingerprint.virtual
+Generating key for com.android.hardware.boot
+Generating key for com.android.hardware.cas
+Generating key for com.android.hardware.wifi
+Generating key for com.android.healthfitness
+Generating key for com.android.hotspot2.osulogin
+Generating key for com.android.i18n
+Generating key for com.android.ipsec
+Generating key for com.android.media
+Generating key for com.android.media.swcodec
+Generating key for com.android.mediaprovider
+Generating key for com.android.nearby.halfsheet
+Generating key for com.android.networkstack.tethering
+Generating key for com.android.neuralnetworks
+Generating key for com.android.ondevicepersonalization
+Generating key for com.android.os.statsd
+Generating key for com.android.permission
+Generating key for com.android.resolv
+Generating key for com.android.rkpd
+Generating key for com.android.runtime
+Generating key for com.android.safetycenter.resources
+Generating key for com.android.scheduling
+Generating key for com.android.sdkext
+Generating key for com.android.support.apexer
+Generating key for com.android.telephony
+Generating key for com.android.telephonymodules
+Generating key for com.android.tethering
+Generating key for com.android.tzdata
+Generating key for com.android.uwb
+Generating key for com.android.uwb.resources
+Generating key for com.android.virt
+Generating key for com.android.vndk.current
+Generating key for com.android.vndk.current.on_vendor
+Generating key for com.android.wifi
+Generating key for com.android.wifi.dialog
+Generating key for com.android.wifi.resources
+Generating key for com.google.pixel.camera.hal
+Generating key for com.google.pixel.vibrator.hal
+Generating key for com.qorvo.uwb
+
+B2 CLI not found, installing...
+Requirement already up-to-date: b2 in /usr/local/lib/python3.7/site-packages
+
+Enter Bucket Name: my-bucket
+Enter B2 Key Id: my-b2-key-id
+Enter B2 App Key: my-b2-app-key
+
+Authorizing B2...
+B2 authorization successful
+
 Uploading keys to Backblaze B2...
+Upload complete
+
 Keys have been generated, password protected, and uploaded to Backblaze B2.
-Clearing keys from devspace
+Cleaning up...
 Cleared Certificates from Devspace
 Clearing ENV Variables
 Cleared ENV Variables
