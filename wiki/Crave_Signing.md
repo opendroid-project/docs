@@ -9,7 +9,7 @@ To begin with signing there are two parts:
 ## Generating Keys using backblaze_keygen
 
 **Attention to Readers :**
-**This script is meant to be run on Devspace CLI not on while building rom**
+**This script is meant to be run on Devspace CLI not while building rom**
 **Neither me [sppidy](https://github.com/sppidy) who made the script nor Crave team members are responsible if you run this script during build and leak your sensitive info**
 
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
@@ -28,6 +28,10 @@ This script automates the process of generating, encrypting, and uploading Andro
 
 1. **Execute the Script:**
 
+   Enter your Project folder. If you don't have one already, make one using [crave clone create](Crave_Devspace.md#setting-up-the-project).
+
+   `cd Lineage21`
+
    Run the script using the following command:
 
    ```sh
@@ -36,11 +40,11 @@ This script automates the process of generating, encrypting, and uploading Andro
 
    Source code to script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/backblaze_keygen.sh)
 
-2. **Password Prompts:**
+1. **Password Prompts:**
    - **Password:** Enter the password to be used for key generation and encryption.
    - **Encryption Password:** Enter the password to encrypt the password file.
 
-3. **Script Workflow:**
+2. **Script Workflow:**
    - **Create Certificate Directory:** A temporary directory is created for storing certificates.
    - **Password for the certicates:** You will be promoted to enter the password which will be used for certificates.
    - **Encrypt Password:** The entered password is encrypted using OpenSSL and stored in the temporary directory.
