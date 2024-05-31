@@ -4,7 +4,11 @@ To begin with signing there are two parts:
 2. Signing the build using crave_sign
    
 ## 1. Generating Keys using backblaze_keygen
-This script is meant to be run on devspace cli running
+
+**Attention to Readers :**
+**This script is meant to be run on Devspace CLI not on while building rom**
+**Neither me [@sppidy](htpps://github.com/sppidy) who made the script nor Crave team members are reposnsible if you run this script during build and leak your sensitive infos**
+
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
 1. Prompts for passwords.
 2. Generates and encrypts keys.
@@ -46,64 +50,13 @@ export BAPP_KEY="your_bapp_key"
 
 3. **Script Workflow:**
    - **Create Certificate Directory:** A temporary directory is created for storing certificates.
+   - **Password for the certicates:** You will be promoted to enter the password which will be used for certificates.
    - **Encrypt Password:** The entered password is encrypted using OpenSSL and stored in the temporary directory.
    - **Generate Keys:** The script generates keys with the specified password.
    - **Install B2 CLI:** If the B2 CLI is not installed, the script installs it.
    - **Authenticate B2:** The script logs into Backblaze B2 using the provided credentials.
    - **Upload Keys:** The keys are uploaded to the specified B2 bucket.
    - **Clean Up:** The script removes the temporary directory containing the certificates and unsets environment variables.
-
-### Detailed Steps
-
-### 1. Encrypting the Password with OpenSSL
-
-The script uses OpenSSL to encrypt the password used for key generation. The encryption is done with AES-256-CBC:
-
-```sh
-echo "$PASSWORD" | openssl enc -aes-256-cbc -iter 256 -salt -out "$CERT_DIR/password.enc" -pass pass:"$PASS_ENCRYPT"
-```
-
-- **`openssl enc -aes-256-cbc -iter 256 -salt`**: Specifies the encryption algorithm (AES-256-CBC), iteration count (256), and salt.
-- **`-out "$CERT_DIR/password.enc"`**: Output encrypted password to a file.
-- **`-pass pass:"$PASS_ENCRYPT"`**: Use the provided encryption password to encrypt the password.
-
-### 2. Generating Keys
-
-Keys for various certificates and APEX packages are generated using a specified subject and the encrypted password:
-
-```sh
-for cert in bluetooth cyngn-app media networkstack platform releasekey sdk_sandbox shared testcert testkey verity; do
-    ./development/tools/make_key "$CERT_DIR/$cert" "$SUBJECT" -password pass:"$PASSWORD"
-done
-
-for apex in com.android.adbd com.android.adservices com.android.adservices.api ...; do
-    apex_subject="/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=$apex/emailAddress=android@android.com"
-    ./development/tools/make_key "$CERT_DIR/$apex" "$apex_subject" -password pass:"$PASSWORD"
-    openssl pkcs8 -in "$CERT_DIR/$apex.pk8" -inform DER -out "$CERT_DIR/$apex.pem" -passin pass:"$PASSWORD" -passout pass:"$PASSWORD"
-done
-```
-
-### 3. Authenticating and Uploading to Backblaze B2
-
-The script authenticates with Backblaze B2 and uploads the generated and encrypted keys:
-
-```sh
-b2 account authorize "$KEY_ID" "$APPLICATION_KEY"
-b2 sync --replace-newer "$CERT_DIR" "b2://$BUCKET_NAME/android-certs"
-```
-
-### 4. Cleanup
-
-After uploading, the script cleans up the temporary files and environment variables to ensure no sensitive information is left behind:
-
-```sh
-rm -rf "$CERT_DIR"
-unset BUCKET_NAME
-unset BKEY_ID
-unset BAPP_KEY
-unset PASS_ENCRYPT
-unset PASSWORD
-```
 
 ### Completion
 
