@@ -90,6 +90,7 @@ This script called crave_sign.sh automates the process of signing Android APK an
    - `KEY_ENCRYPTION_PASSWORD`: Password used to decrypt the key password.
    - `BKEY_ID`: Backblaze B2 application key ID.
    - `BAPP_KEY`: Backblaze B2 application key.
+**Note :** These variables can also directly be specified in yaml file.
 
 ### Setting Environment Variables
 
