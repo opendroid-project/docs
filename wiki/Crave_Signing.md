@@ -1,6 +1,7 @@
 # Signing Your builds in Crave
-This page is a work in progress. Please wait for [this PR](https://github.com/accupara/docker-images/pull/83) to be merged. 
+This page is a work in progress, and so, the instructions and scripts may not work as intended. Please keep this in mind while you try it out. 
 
+Let us know in the "Signed Builds" thread under ext-foss-aosp in [the discord server](https://discord.crave.io)
 
 To begin with signing there are two parts:
 1. Generating Keys using backblaze_keygen
