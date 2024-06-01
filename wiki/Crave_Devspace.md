@@ -139,7 +139,13 @@ execute our commands, one by one.
 crave run --no-patch -- "your commands"
 ```
 
-- If you'd like a clean build
+- If you'd like a clean build, add --clean flag
+
+Note: using clean build will reset the image to default. This means it removes any of your progress e.g. synced dt/or the out folder from previous build and ensures we're back to the default source code of the base project. 
+
+Please avoid doing this needlessly as resyncing and building from takes a lot of time. 
+
+Syntax:
 
 ```
 crave run --clean --no-patch -- "your commands"
