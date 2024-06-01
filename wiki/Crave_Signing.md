@@ -11,7 +11,7 @@ To begin with signing there are two parts:
 
 **Attention to Readers :**
 **This script is meant to be run on Devspace CLI not while building rom**
-**Neither me [sppidy](https://github.com/sppidy) who made the script nor Crave team members are responsible if you run this script during build and leak your sensitive info**
+**Neither [sppidy](https://github.com/sppidy), who made the script nor Crave team members are responsible if you run this script during build and leak your sensitive info**
 
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
 1. Prompts for passwords.
