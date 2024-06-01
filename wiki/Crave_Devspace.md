@@ -139,11 +139,12 @@ execute our commands, one by one.
 crave run --no-patch -- "your commands"
 ```
 
-- If you'd like a clean build
+- If you'd like a clean build, 
 
 ```
 crave run --clean --no-patch -- "your commands"
 ```
+-  just for info, using clean build will reset the image to default, it means it removes any of your progress e.g. synced dt/or prebuilt out(in case of failed build) 
 
 When you run a build using crave run, it adds you to the build queue,
 where a build node comes, picks it up and compiles your build for you!
