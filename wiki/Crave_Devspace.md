@@ -474,3 +474,4 @@ be wiped if you do a clean build.
 **Do not run repo sync or build the ROM here, wait in the crave run
 queue for a more powerful machine.**
 
+You could get banned for syncing or building in this environment!
