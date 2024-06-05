@@ -5,11 +5,6 @@ The crave client has a flag called link-services which allows you to hook-up a p
 ### VS-Code Web
 In this section, we'll be using code-server(preinstalled on devspace CLI) to start a session. Most of these steps will be obsolete soon, when the crave team has this auto-execute when VSCode button is clicked on the dashboard. For now, try this:
 
-#### Delete Configuration
-Delete old configuration 
-
-```rm ~/.config/code-server/config.yaml || echo "Not found"```
-
 #### Kill Session
 Stop the command/exit out of the session
 
@@ -24,9 +19,12 @@ Alternatively, you can start a new session from Sessions tab and connect to it.
 
 #### Configure Things
 
-run this command to turn off password authentication 
+run this command to set up code-server on port 5899 
 
-```curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/scripts/code-server.sh | bash```
+```
+curl -O https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/scripts/code-server.sh; \
+bash code-server.sh
+```
 
 This is a simple script to automatically fetch configuration and start a tmux session with code-server running. 
 
