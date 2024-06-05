@@ -3,10 +3,12 @@
 The crave client has a flag called link-services which allows you to hook-up a port to your host system
 
 ### VS-Code Web
-In this section, we'll be using code-server(preinstalled on devspace CLI) to start a session.
+In this section, we'll be using code-server(preinstalled on devspace CLI) to start a session. Most of these steps will be obsolete soon, when the crave team has this auto-execute when VSCode button is clicked on the dashboard. For now, try this:
 
-#### Generate Configuration
-Run `code-server` to generate the config file
+#### Delete Configuration
+Delete old configuration 
+
+```rm ~/.config/code-server/config.yaml || echo "Not found"```
 
 #### Kill Session
 Stop the command/exit out of the session
@@ -16,55 +18,25 @@ Go to the dashboard, Sessions Tab, and stop your session
 #### Connect to Session
 Now, connect to your devspace with this command
 
-```crave devspace --link-service http:8080:8080```
+```crave devspace```
  
-#### Change Default Password
+Alternatively, you can start a new session from Sessions tab and connect to it.
+
+#### Configure Things
 
 run this command to turn off password authentication 
 
-```sed -i.bak 's/auth: password/auth: none/' ~/.config/code-server/config.yaml```
+```curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/scripts/code-server.sh | bash```
 
-(taken from official code-server docs)
-
-Alternatively, you could set a password in `~/.config/code-server/config.yaml` inside devspace
-
-#### Open a Tmux Window
-Open a tmux and attach to it
-```tmux```
-
-(to reconnect to this, simply run `tmux a -t 0` since it is the first running tmux session)
-
-#### Start code-server
-Run code-server
-```code-server```
+This is a simple script to automatically fetch configuration and start a tmux session with code-server running. 
 
 #### Connect
 Connect to it through your browser
-http://localhost:8080
 
-### VNC
-Same steps as VS-Code Web except you don't need to run anything
-
-#### Connect to Session
-Kill old session(refer to step 2 of VS-Code Web section) and then connect to your devspace with this command:
-
-```crave devspace --link-service vnc:5900:5900```
-
-#### Check supervisord
-Check status of supervisord with this: 
-
-```sudo service supervisor status```
-
-If it says it is not running, start it using this command
-
-```sudo service supervisor start```
-
-#### VNC Client
-Now, connect as per instructions [here](https://foss.crave.io/docs/devspaces/#vnc)
-
+Go into Sessions tab and click on "Connect VSCode" button. 
 
 ### VS-Code Tunnel
-This works well if you can access [vscode.dev](https://vscode.dev) but cannot use the crave binary.
+This works well if you can access [vscode.dev](https://vscode.dev) but cannot use the crave binary, as a backup for when VSCode RAS doesn't work.
 
 To set it up, run this command and follow further instructions as shown on the screen:
 ```curl https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/scripts/vscode-tunnel.sh | bash && tmux a -t codetunnel```
@@ -77,7 +49,6 @@ Now, follow further instructions on the screen.
 ## Debugging
 If things don't connect and you're sure that you did it right, try this:
 - Stop your session from Sessions tab in dashboard
-- Run the command again with link-services
-- start a new tmux session with code-server or whatever you are running.
+- Run the command again
 
 If you still can't get it to work, also try asking in the ext-devspace channel in the [discord server](https://discord.crave.io). 
