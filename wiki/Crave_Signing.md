@@ -1,5 +1,7 @@
-# Signing Your builds in Crave
+# Signing Your builds On Crave
 This page is a work in progress, and so, the instructions and scripts may not work as intended. Please keep this in mind while you try it out. 
+
+This guide also assumes you are familiar with crave and the procedure building and signing android, and debugging issues that arise. 
 
 Let us know in the "Signed Builds" thread under ext-foss-aosp in [the discord server](https://discord.crave.io)
 
@@ -10,7 +12,7 @@ To begin with signing there are two parts:
 ## Generating Keys using backblaze_keygen
 
 **Attention to Readers :**
-**This script is meant to be run on Devspace CLI not while building rom**
+**This script is meant to be run on Devspace CLI not while building the ROM**
 **Neither [sppidy](https://github.com/sppidy), who made the script nor Crave team members are responsible if you run this script during build and leak your sensitive info**
 
 This script automates the process of generating, encrypting, and uploading Android certificates to Backblaze B2. It performs the following steps:
@@ -39,7 +41,7 @@ This script automates the process of generating, encrypting, and uploading Andro
    /opt/crave/backblaze_keygen.sh
    ```
 
-   Source code to script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/backblaze_keygen.sh)
+   Source code to the script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/backblaze_keygen.sh)
 
 1. **Password Prompts:**
    - **Password:** Enter the password to be used for key generation and encryption.
@@ -237,7 +239,7 @@ If you're using sounddrill's crave_aosp_builder github actions workflow, you can
    - **Generate OTA Update Package:** Creates an OTA update package from the signed files.
    - **Clean Up:** Removes the temporary directory containing the certificates and unsets environment variables.
 
-   Source code to script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/crave_sign.sh)
+   Source code to the script can be found [here](https://github.com/accupara/docker-images/blob/master/aosp/common/crave_sign.sh)
 
 ### Cleanup
 
