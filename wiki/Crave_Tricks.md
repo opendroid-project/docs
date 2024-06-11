@@ -5,11 +5,6 @@ The crave client has a flag called link-services which allows you to hook-up a p
 ### VS-Code Web
 In this section, we'll be using code-server(preinstalled on devspace CLI) to start a session. Most of these steps will be obsolete soon, when the crave team has this auto-execute when VSCode button is clicked on the dashboard. For now, try this:
 
-#### Kill Session
-Stop the command/exit out of the session
-
-Go to the dashboard, Sessions Tab, and stop your session
-
 #### Connect to Session
 Now, connect to your devspace with this command
 
@@ -26,7 +21,7 @@ curl -O https://raw.githubusercontent.com/sounddrill31/crave_aosp_builder/main/s
 bash code-server.sh
 ```
 
-This is a simple script to automatically fetch configuration and start a tmux session with code-server running. 
+This is a simple script to automatically fetch configuration and start the vscode service. If this isn't running in devspace CLI, it'll open a tmux where code-server starts at port 5899.
 
 #### Connect
 Connect to it through your browser
@@ -42,7 +37,6 @@ To set it up, run this command and follow further instructions as shown on the s
 This command basically downloads the script from [here](https://github.com/sounddrill31/crave_aosp_builder/blob/main/scripts/vscode-tunnel.sh), and attaches to the tmux window called codetunnel
 
 Now, follow further instructions on the screen. 
-
 
 ## Debugging
 If things don't connect and you're sure that you did it right, try this:

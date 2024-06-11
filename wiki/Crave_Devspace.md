@@ -76,6 +76,8 @@ For menu, swipe from the middle of the left side of your phone. If you're on a c
 
 Crave RAS is built upon [Apache Guacamole](https://guacamole.apache.org/)
 
+There's also a VSCode Web Client, instructions to set this up can be found [here](/wiki/Crave_Tricks#wiki/Crave_Tricks#vs-code-web)
+
 ### How to Prepare Environment
 
 2. Now open up your browser again and navigate back to foss.crave.io
@@ -216,10 +218,10 @@ Rules for doing this:
 - (General Rule) Do not queue multiple builds at once
 - Sync android 14 ROMs on Android 14 base project only
 
-Example: Building risingOS 14
+Example: Building crDroid 14
 
 1. Set up closest cousin project that crave supports. Since it's
-risingOS, you could use CipherOS or LineageOS for this (like
+crDroid a14, you could use CipherOS or LineageOS for this (like
 [this](/wiki/Crave_Devspace#setting-up-the-project))
 using crave clone create.
 
@@ -227,12 +229,12 @@ using crave clone create.
 
 ```
 crave run --no-patch -- "rm -rf .repo/local_manifests; \
-repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs -g default,-mips,-darwin,-notdefault; \
+repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs; \
 git clone https://github.com/youraccount/local_manifests --depth 1 -b rising-14 .repo/local_manifests; \ 
 /opt/crave/resync.sh; \
 source build/envsetup.sh; \
-riseup device_codename userdebug; \ 
-ascend"
+breakfast device_codename userdebug; \ 
+mka bacon"
 ```
 
 ## Pulling Output
@@ -436,7 +438,8 @@ LOS 21:
   ignoreClientHostname: true
 PixelOS:
   ignoreClientHostname: true
-LOS 16:
+Rising OS:
+  ignoreClientHostname: trueLOS 16:
   ignoreClientHostname: true
 LOS CM 14.1:
   ignoreClientHostname: true  
