@@ -28,6 +28,7 @@ Information and guides:
 
 Useful Resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
+- [Lopestom's Bringup guides](https://gist.github.com/lopestom/)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net/)
