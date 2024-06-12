@@ -21,6 +21,7 @@ Crave resources:
   Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
 Information and guides:
+- [Building 101](/wiki/Building_101)
 - [Glossary of key
   terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
