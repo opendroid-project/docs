@@ -32,14 +32,14 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 4. Run `repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs`. Replace the url with the link to your preferred source of android. Replace the branch with the version of android you want to build. (Lineage 21 is A14, 20 is A13)
 
-    **Note #1**: If you get an error like `repo does not know who you are`, run 
+    - **Note #1**: If you get an error like `repo does not know who you are`, run 
     ```
     git config --global user.name "ProAndroidBuilder" # This can be any name, even your real name. Be warned, this name will be public if you start committing things.
 
     git config --global user.email "android@veryrealemail.com" # This should be your email. Be warned, this will be public if you start committing things.
     ```
 
-    **Note #2**: You can specify the `--depth=1` argument here to save storage space albeit at the loss of commit history.
+    - **Note #2**: You can specify the `--depth=1` argument here to save storage space albeit at the loss of commit history.
 
 5. Run `repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)`. In case you ger RPC errors, try reducing the -j argument to something like four. I usually run this sync command two or three times, to clone any repos that failed to clone during the previous sync (bad internet problems).
 
@@ -75,7 +75,7 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 1. Run `. build/envsetup.sh` or `source build/envsetup.sh`
 
 2. Run `lunch <PRODUCT>-<RELEASE(IF A14 QPR2+)>-<VARIANT>`. This is the device and variant you want to build for.
-    
+
     *Product*: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and AOSP based forks use aosp_device.
 
     *Release*: **Post A14 QPR2**, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
@@ -89,9 +89,9 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 
 3. Run `mka -j$(nproc --all)`. Some roms do not have the mka command, instead use `make`.
 
-    **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j argument is the number of threads with which android should be built.
+    - **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j argument is the number of threads with which android should be built.
 
-    **Note #2**: If you want a flashable zip instead of raw mages, run `mka bacon -j$(nproc --all)` or `make bacon -j$(nproc --all)`
+    - **Note #2**: If you want a flashable zip instead of raw mages, run `mka bacon -j$(nproc --all)` or `make bacon -j$(nproc --all)`
 
 Hopefully, android built without errors. This guide does not cover fixing common errors. Once done, you should hopefully see `build completed`.
 
