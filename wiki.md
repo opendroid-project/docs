@@ -11,19 +11,14 @@ Cirrus CI has discontinued ROM Builders around Nov 2023. Now, [crave.io](https:/
 This guide attempts to help new and old users with android development and using Crave.io through Devspace CLI and alternatively, github actions.
 
 Crave resources:
-- [Crave Devspaces
-  CLI](/wiki/Crave_Devspace)
-- [Crave Devspaces
-  CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
-- [Crave Devspaces
-  CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
-- [Crave AOSP
-  Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
+- [Crave Devspaces CLI](/wiki/Crave_Devspace)
+- [Crave Devspaces CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
+- [Crave Devspaces CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
+- [Crave AOSP Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
 Information and guides:
 - [Building 101](/wiki/Building_101)
-- [Glossary of key
-  terms](/wiki/Glossary)
+- [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
 
 Useful Resources:
@@ -32,6 +27,7 @@ Useful Resources:
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net/)
+- [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
 
 Chat Groups:
 - [Get Help](/wiki/Get_Help)
