@@ -87,11 +87,11 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 
     * `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
 
-3. Run `mka -j$(nproc --all)`. Some roms do not have the mka command, instead use `make`.
+3. Run `m -j$(nproc --all)`.
 
-    - **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j argument is the number of threads with which android should be built.
+    - **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j (jobs) argument is the number of threads which are used during compilation.
 
-    - **Note #2**: If you want a flashable zip instead of raw mages, run `mka bacon -j$(nproc --all)` or `make bacon -j$(nproc --all)`
+    - **Note #2**: If you want a flashable zip instead of raw mages, run `m bacon -j$(nproc --all)`.
 
 Hopefully, android built without errors. This guide does not cover fixing common errors. Once done, you should hopefully see `build completed`.
 
