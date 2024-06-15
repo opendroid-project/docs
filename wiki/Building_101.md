@@ -1,6 +1,7 @@
 # Building 101
 
 This guide aims to teach users about the basics of android building
+If you want to build A12+ for devices not using linux 4.4 and up please refer to [Building android for legacy devices](/wiki/Building_android_for_legacy_devices)
 
 ## Syncing AOSP Source code
 
