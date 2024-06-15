@@ -81,11 +81,11 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
     *Release*: **Post A14 QPR2**, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
 
     *Variant*: Variant is the type of build you want to build.
-    * `eng` offers faster builds and easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
+    * `eng` offers easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
 
-    * `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant
+    * `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant.
 
-    * `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. This builds slow and debuggability is minimal.
+    * `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
 
 3. Run `mka -j$(nproc --all)`. Some roms do not have the mka command, instead use `make`.
 
