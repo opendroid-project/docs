@@ -35,7 +35,8 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
     - **Note #1**: If you get an error like `repo does not know who you are`, run 
     ```
     git config --global user.name "ProAndroidBuilder" # This can be any name, even your real name. Be warned, this name will be public if you start committing things.
-
+    ```
+    ```
     git config --global user.email "android@veryrealemail.com" # This should be your email. Be warned, this will be public if you start committing things.
     ```
 
