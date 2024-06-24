@@ -28,6 +28,22 @@ Useful Resources:
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net/)
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
+- [LineageOS Vendor Tree Guide](https://wiki.lineageos.org/proprietary_blobs.html)
+
+GSI and more Resources:
+- [Phhusson's Treble-Experimentations](https://github.com/phhusson/treble_experimentations/wiki)
+
+SELinux Guides:
+- [AOSP General SELinux](https://source.android.com/security/selinux/customize)
+- [AOSP Device SELinux](https://source.android.com/security/selinux/device-policy)
+- [LineageOS SELinux Guide](https://lineageos.org/engineering/HowTo-SELinux)
+
+Tools:
+- [Azwhikaru's Action-TWRP-Builder](https://github.com/azwhikaru/Action-TWRP-Builder)
+- [SebaUbuntu's Twrpdtgen](https://github.com/twrpdtgen/twrpdtgen)
+- [SebaUbuntu's Aospdtgen](https://github.com/sebaubuntu-python/aospdtgen)
+- [Dumprx](https://github.com/DumprX/DumprX)
+- [cd-Crypton's extract_proprietary_blobs](https://github.com/cd-Crypton/extract_proprietary_blobs)
 
 Chat Groups:
 - [Get Help](/wiki/Get_Help)
