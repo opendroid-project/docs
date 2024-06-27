@@ -4,12 +4,7 @@
 
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
-DM me(sounddrill on telegram/discord) or Yuvraaj(Uvatbc on discord, Yuvraaj on telegram) since self-signup is disabled.
-Remember to share the following for an invite:
-- Your name
-- Email
-- Git profile
-- Devices you plan to build for
+ Please request an account [here](https://forms.gle/Jhvy9osvdmcS9B7fA) since self-signup is disabled.
 
 Also check out our [discord](https://discord.crave.io)!
 
