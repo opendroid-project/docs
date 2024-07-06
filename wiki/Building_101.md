@@ -79,7 +79,11 @@ The exact repos to clone varies from device to device. Some devices may use a co
 
 Sometimes, the device tree maintainer might have been kind enough to share a "local manifest". This basically allows you to clone the trees hassle-free with `repo`.
 
-If you are lucky enough to have a local manifest, just drop it in to `ANDROID_CLONE_DIRECTORY/.repo/local_manifests/` (you may have to create this directory). After this, just run repo sync once more.
+If you are lucky enough to have a local manifest, just drop it in to 
+```
+ANDROID_CLONE_DIRECTORY/.repo/local_manifests/
+```
+(you may have to create this directory). After this, just run repo sync once more.
 
 ---
 
