@@ -1,6 +1,6 @@
 # Building 101
 
-This guide aims to teach users about the basics of android building
+This guide aims to teach users about the basics of android building.
 If you want to build A12+ for devices not using linux 4.4 and up please refer to [Building android for legacy devices](/wiki/Building_android_for_legacy_devices)
 
 ## Syncing AOSP Source code
@@ -13,7 +13,7 @@ You must first install it on your server.
 
 There are also some additional dependencies, which are usually covered by the `base-devel` package group of your linux distribution.
 
-ArchLinux:
+Arch Linux:
 ```
 sudo pacman -S repo base-devel git-lfs
 ```
@@ -25,7 +25,7 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 ### Initialising and syncing source
 
-1. Now, find the manifest of your preferred android fork. This guide will be using LineageOS as an example.
+1. Find the manifest of your preferred android fork. This guide will be using LineageOS as an example.
 
 2. Make a directory in which you want the android source code to be cloned
     ```
@@ -45,13 +45,14 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
     Replace the url with the link to your preferred source of android. Replace the branch with the version of android you want to build. (Lineage 21 is A14, 20 is A13)
 
     - **Note #1**: If you get an error like `repo does not know who you are`, run 
-    ```
-    git config --global user.name "ProAndroidBuilder" # This can be any name, even your real name. Be warned, this name will be public if you start committing things.
-    ```
+        ```
+        git config --global user.name "ProAndroidBuilder" # This can be any name, even your real name.
+        ```
 
-    ```
-    git config --global user.email "android@veryrealemail.com" # This should be your email. Be warned, this will be public if you start committing things.
-    ```
+        ```
+        git config --global user.email "android@veryrealemail.com" # This should be your email.
+        ```
+        Be warned, these info will be public if you start committing and pushing things.
 
     - **Note #2**: You can specify the `--depth=1` argument here to save storage space albeit at the loss of commit history.
 
@@ -75,9 +76,9 @@ In order to build android for a device, you must first clone a few things:
 * Kernel tree
 * Other hardware/ repos
 
-The exact repos to clone varies from device to device. Some devices may use a common tree(which means that you have to clone 2 device and vendor trees), while others(especially samsung trees) have many hardware/ dependencies. 
+The exact repos to clone varies from device to device. Some devices may use a common tree (which means that you have to clone 2 device and vendor trees), while others (especially samsung trees) have many hardware/ dependencies.
 
-Sometimes, the device tree maintainer might have been kind enough to share a "local manifest". This basically allows you to clone the trees hassle-free with `repo`.
+Sometimes, the device maintainer might have been kind enough to share a "local manifest". This basically allows you to clone the trees hassle-free with `repo`.
 
 If you are lucky enough to have a local manifest, just drop it in to 
 ```
@@ -95,6 +96,7 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 
 
 ## Building Time!
+
 1. Run
     ```
     . build/envsetup.sh
@@ -106,16 +108,16 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 
 2. Run `lunch <PRODUCT>-<RELEASE(IF A14 QPR2+)>-<VARIANT>`. This is the device and variant you want to build for.
 
-    *Product*: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and AOSP based forks use aosp_device.
+    - *Product*: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and AOSP based forks use aosp_device.
 
-    *Release*: **Post A14 QPR2**, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
+    - *Release*: **Post A14 QPR2**, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
 
-    *Variant*: Variant is the type of build you want to build.
-    * `eng` offers easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
+    - *Variant*: Variant is the type of build you want to build.
+        - `eng` offers easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
 
-    * `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant.
+        - `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant.
 
-    * `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
+        - `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
 
 3. Run
     ```
@@ -124,17 +126,17 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 
     - **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j (jobs) argument is the number of threads which are used during compilation.
 
-    - **Note #2**: If you want a flashable zip instead of raw mages, run
+    - **Note #2**: If you want a flashable zip instead of raw images, run
     ```
     m bacon -j$(nproc --all)
     ```
 
-Hopefully, android built without errors. This guide does not cover fixing common errors. Once done, you should hopefully see `build completed`.
+Hopefully, android builds without errors. This guide does not cover fixing common errors. Once done, you should hopefully see `build completed`.
 
 ## Sharing the build
 
 The built rom is stored in `out/target/product/<YOUR DEVICE CODENAME>`.
 Depending on which target you chose, the files here will be different.
-Simply share your *.img files or the latest .zip file in that folder. Please ensure to test your builds thoroughly before you publicly release them.
+Simply share your *.img files or the latest .zip file in that folder. Please ensure to have your build(s) thoroughly tested before you publicly release them.
 
 If your rom does not boot, ask other maintainers for your device if your device needs specific patches or refer to [Debugging](/wiki/Debugging) in order to grab logs.
