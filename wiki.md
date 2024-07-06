@@ -1,22 +1,22 @@
-<strong>Building Android</strong>
+## Building Android
 
 Building Android from start to finish (WIP)
 
 ## Getting started
 
-Earlier, Cirrus CI gave the ROM Builders community servers for OSS developement of android builds, as these builds need a lot of resources that most people don't have lying around, like double digit RAM requirements(GB), triple digit storage requirement(GB), a capable processor, a specific linux environment, etc. 
+Earlier, Cirrus CI gave the ROM Builders community server for OSS developement of Android builds, as these builds need a lot of resources that most people don't have lying around, like double digit RAM requirements (GB), triple digit storage requirements (GB), a capable processor, a specific Linux environment, etc. 
 
-Cirrus CI has discontinued ROM Builders around Nov 2023. Now, [crave.io](https://crave.io) is providing Build Servers with a pretty similar Queue System. It is also a lot more flexible as it allows custom commands, has docker image support, allows entering into build storage without build running, etc.
+Cirrus CI has discontinued ROM Builders around Nov 2023. Now, [crave.io](https://crave.io) is providing Build Servers with a pretty similar Queue System. It is also a lot more flexible as it allows custom commands, has Docker image support, allows entering into build storage without running a build, etc.
 
-This guide attempts to help new and old users with android development and using Crave.io through Devspace CLI and alternatively, github actions.
+This guide attempts to help new and old users with Android development and using crave.io through Devspace CLI and alternatively, Github Actions.
 
-Crave resources:
+Crave Resources:
 - [Crave Devspaces CLI](/wiki/Crave_Devspace)
 - [Crave Devspaces CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
 - [Crave Devspaces CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
 - [Crave AOSP Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
-Information and guides:
+Information and Guides:
 - [Building 101](/wiki/Building_101)
 - [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
@@ -42,7 +42,7 @@ Tools:
 - [Azwhikaru's Action-TWRP-Builder](https://github.com/azwhikaru/Action-TWRP-Builder)
 - [SebaUbuntu's Twrpdtgen](https://github.com/twrpdtgen/twrpdtgen)
 - [SebaUbuntu's Aospdtgen](https://github.com/sebaubuntu-python/aospdtgen)
-- [Dumprx](https://github.com/DumprX/DumprX)
+- [DumprX](https://github.com/DumprX/DumprX)
 - [cd-Crypton's extract_proprietary_blobs](https://github.com/cd-Crypton/extract_proprietary_blobs)
 
 Chat Groups:
