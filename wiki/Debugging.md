@@ -1,16 +1,16 @@
-# Debugging android
+# Debugging Android
 
 ## Kernel logs
-### While booted into android
+
+### While booted into Android
 1) Run `dmesg` as root. 
 
 ### Failed boot
-1) Reboot into recovery and chedck if `/proc/last_kmsg` or `/sys/fs/pstore/*`
-
+1) Reboot into recovery and check for `/proc/last_kmsg` or `/sys/fs/pstore/*`
 
 ## Userspace
 
-### Stuck on boot animation (getting regular logs)
+### Stuck at boot animation (getting regular logs)
 1) (Recovery) Mount System and delete file `/system/phh/secure`. Reboot.
 2) Connect phone to PC.
 3) Run 
@@ -19,13 +19,13 @@
 
     while on bootsplash
 
-### Stuck on bootanimation/splash (or need regular logs but ADB is dead)
-1) Reboot into TWRP
-2) `adb pull /data/boot_lc_main.txt` (if it exists)
+### Stuck at bootanimation/splash (or need regular logs but ADB is dead)
+1) Reboot into TWRP.
+2) `adb pull /data/boot_lc_main.txt` (if it exists).
 
 ### ADB not authorized
-1) Reboot into recovery
-2) Connect to PC
+1) Reboot into recovery.
+2) Connect to PC.
 3) Run:
 
     *Linux/Unix:*
@@ -38,16 +38,15 @@
 
 4) Now ADB should be allowed.
 
-
-## Early-boot (stuck at bootloop/splash/oem logo)
+## Early-boot (bootloop at splash/OEM logo)
 
 #### Checking pstore and last_kmsg
-1) Reboot to TWRP
+1) Reboot to TWRP.
 2) Check
 
-```/sys/fs/pstore/*```
+    ```/sys/fs/pstore/*```
 
-```/proc/last_kmsg```
+    ```/proc/last_kmsg```
 
 3) Copy logs to PC (Ex: `adb pull /proc/last_kmsg lastkmsg.txt`)
 
@@ -61,7 +60,8 @@
     ```
 
 ### Using FBCon
-FBCon enables kernel output to the display. Use this as a last resort if the above mentioned methods dont work
+
+FBCon enables kernel output to the display. Use this as a last resort if the above mentioned methods don't work.
 
 1) Build kernel with config options:
     ```
@@ -76,11 +76,11 @@ FBCon enables kernel output to the display. Use this as a last resort if the abo
     androidboot.console=tty0 console=tty0
     ```
 
-3) Reboot into fastboot or recovery
+3) Reboot into fastboot or recovery.
 
 4) Grab another phone, make some contraption to keep it pointed at screen.
 
-5) Adjust exposure and focus to make the text visible
+5) Adjust exposure and focus to make the text visible.
 
 6) Run
     ```
