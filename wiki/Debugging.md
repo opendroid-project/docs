@@ -20,6 +20,56 @@
     while on bootsplash
 
 ### Stuck at bootanimation/splash (or need regular logs but ADB is dead)
+1) Reboot into recovery.
+2) Mount `system` in recovery.
+3) Connect to PC.
+4) Run:
+
+    ```adb shell mount -o rw,remount /system_root```
+
+    ```adb pull /system_root/system/build.prop```
+
+5) Use a text editor to change the following props in build.prop 
+
+    `ro.adb.secure=0`
+    
+    `ro.debuggable=1`
+    
+    `ro.secure=0`
+    
+    `persist.service.adb.enable=1`
+    
+    `persist.service.debuggable=1`
+    
+    `persist.sys.usb.config=adb`
+
+    or if `GNU sed` is available on your system:
+
+    ```
+    sed -i 's/^ro\.adb\.secure=.*/ro.adb.secure=0/' build.prop
+    ```
+    
+    ```
+    sed -i 's/^ro\.debuggable=.*/ro.debuggable=1/' build.prop
+    ```
+    
+    ```
+    sed -i 's/^ro\.secure=.*/ro.secure=0/' build.prop
+    ```
+    
+    ```
+    sed -i 's/^persist\.service\.adb\.enable=.*/persist.service.adb.enable=1/' build.prop
+    ```
+    
+    ```
+    sed -i 's/^persist\.service\.debuggable=.*/persist.service.debuggable=1/' build.prop
+    ```
+    
+    ```
+    sed -i 's/^persist\.sys\.usb\.config=.*/persist.sys.usb.config=adb/' build.prop
+    ```
+
+### This too might work
 1) Reboot into TWRP.
 2) `adb pull /data/boot_lc_main.txt` (if it exists).
 
