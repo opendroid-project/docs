@@ -69,6 +69,12 @@
     sed -i 's/^persist\.sys\.usb\.config=.*/persist.sys.usb.config=adb/' build.prop
     ```
 
+6) Now copy the modified `build.prop` to /system by running:
+    
+    ```
+    adb push build.prop /system_root/system/
+    ```
+
 ### This too might work
 1) Reboot into TWRP.
 2) `adb pull /data/boot_lc_main.txt` (if it exists).
