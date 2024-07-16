@@ -19,7 +19,7 @@
 
     while on bootsplash
 
-### Stuck at bootanimation/splash (or need regular logs but ADB is dead)
+### Override ADB authentication to capture logs during boot
 1) Reboot into recovery.
 2) Mount `system` in recovery.
 3) Connect to PC.
@@ -31,51 +31,34 @@
 
 5) Use a text editor to change the following props in build.prop 
 
-    `ro.adb.secure=0`
+    ```ro.adb.secure=0```
     
-    `ro.debuggable=1`
+    ```ro.debuggable=1```
     
-    `ro.secure=0`
+    ```ro.secure=0```
     
-    `persist.service.adb.enable=1`
+    ```persist.service.adb.enable=1```
     
-    `persist.service.debuggable=1`
+    ```persist.service.debuggable=1```
     
-    `persist.sys.usb.config=adb`
+    ```persist.sys.usb.config=adb```
 
     or if `GNU sed` is available on your system:
 
     ```
     sed -i 's/^ro\.adb\.secure=.*/ro.adb.secure=0/' build.prop
-    ```
-    
-    ```
     sed -i 's/^ro\.debuggable=.*/ro.debuggable=1/' build.prop
-    ```
-    
-    ```
     sed -i 's/^ro\.secure=.*/ro.secure=0/' build.prop
-    ```
-    
-    ```
     sed -i 's/^persist\.service\.adb\.enable=.*/persist.service.adb.enable=1/' build.prop
-    ```
-    
-    ```
     sed -i 's/^persist\.service\.debuggable=.*/persist.service.debuggable=1/' build.prop
-    ```
-    
-    ```
     sed -i 's/^persist\.sys\.usb\.config=.*/persist.sys.usb.config=adb/' build.prop
     ```
 
 6) Now copy the modified `build.prop` to /system by running:
     
-    ```
-    adb push build.prop /system_root/system/
-    ```
+    ```adb push build.prop /system_root/system/```
 
-### This too might work
+### Pull `/data/boot_lc_main.txt` 
 1) Reboot into TWRP.
 2) `adb pull /data/boot_lc_main.txt` (if it exists).
 
