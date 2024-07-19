@@ -10,7 +10,9 @@ If you want to build A12+ for devices not using linux 4.4 and up please refer to
 Repo is a tool developed by google to help manage the thousands of git repos used in a project like AOSP.
 
 You must first install it on your server.
-
+```
+mkdir ~/bin && PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+```
 There are also some additional dependencies, which are usually covered by the `base-devel` package group of your linux distribution.
 
 Arch Linux:
