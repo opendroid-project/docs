@@ -6,7 +6,7 @@
 
 Please read the rules before getting started.
 
-Here's the link: [Crave_Rules]
+[Here's the link to the rules](Crave_Rules)
 
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
