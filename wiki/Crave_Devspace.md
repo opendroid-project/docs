@@ -2,6 +2,12 @@
 
 ## Setting Up Crave Devspace CLI
 
+### Reading the Rules
+
+Please read the rules before getting started.
+
+Here's the link: [Crave_Rules]
+
 ### Getting a [foss.crave.io](https://Foss.crave.io) account
 
  Please request an account [here](https://forms.gle/Jhvy9osvdmcS9B7fA) since self-signup is disabled.
