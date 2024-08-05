@@ -10,6 +10,7 @@ This guide attempts to help new and old users with Android development and using
 
 Crave Resources:
 - [Crave Devspaces CLI](/wiki/Crave_Devspace)
+- [Crave Devspaces CLI - Rules](/wiki/Crave_Rules)
 - [Crave Devspaces CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
 - [Crave Devspaces CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
 - [Crave AOSP Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
