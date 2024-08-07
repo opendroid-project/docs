@@ -10,6 +10,7 @@ Here are some simple Rules you are expected to follow to ensure everyone in the 
 - ***Do not use make clean or rm -rf out***. This slows down the queue because a 15 to 30 min incremental build becomes a full 3-4 hours build from scratch.  
 - ***Do not abuse --clean needlessly***. Use only if there is a legitimate need and contact a queue moderator through the official chats when in doubt. This is done for the same reasons as the above rule.
 - ***Do not make a folder and sync inside that to avoid conflicts*** (like `cd folder; repo sync`)
+- ***Private repos***. Do not help users set up cloning from private repos because this goes against the "foss" in foss.crave.io.
 
 ## Community Guidelines
 - ***Read the wiki, and make an effort to fix your problems before asking***. This gives you enough context to help us help you.
