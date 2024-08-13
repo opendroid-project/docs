@@ -17,7 +17,7 @@
 > ~~Actually 🤓 I'm not a nerd~~ ah shit... anyways:
 
 1. Get info about your device.
-2. Get a direct download link to your device's firmware* and throw it my dumper bot's way on [Telegram]https://t.me/OkBuddyGSI).
+2. Get a direct download link to your device's firmware* and throw it my dumper bot's way on [Telegram](https://t.me/OkBuddyGSI).
 3. Wait for the dump* to finish, as it's dumping you might wanna go touch some grass (you need it man, I hear your body screaming from here).
 4. Get the device tree* generated automatically by our dumper service.
 5. Push it to GitHub*. *what? is this like that yellow...*
