@@ -41,7 +41,7 @@
 
 3. ##### ***Touching grass.***
 
-* Go outside, find this green thing and *touch* it [How to touch grass](assets/20240813_170222_istockphoto-1349781282-612x612.jpg)
+* Go outside, find this green thing and *touch* it [Couple touching grass (they have a life 0:)](assets/has-a-life.jpg)
   > Note: if you're an arch user then you probably thought I'm referring to the *touch* linux command.. NO, what I meant is, go outside and make a physical contact between your soft femboy hand and the green material in the picture.
 
 4. ##### ***Getting the device tree generated automatically.***
