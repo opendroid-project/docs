@@ -20,7 +20,7 @@ Information and Guides:
 - [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
 - IMY's Bringup Guides
- - [Bringup](/wiki/bringup)
+  - [Bringup](/wiki/bringup)
 
 Useful Resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
