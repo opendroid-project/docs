@@ -31,38 +31,48 @@
 
 ##### 1. ***Device info.***
 
-* Google your device's name [example](assets/20240813_164030_image.png)
+* Google your device's name 
+  ![User checking for INFINIX hot 12 play](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_164030_image.png)
 * GSMArena will provide you with most of the info you need but a more robust way is to use this [app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&hl=en)
 
 ##### 2. ***Device firmware.***
 
-* Search google for that too. [example2](assets/20240813_165746_image.png)
-* This website works well for me [example3](assets/20240813_165929_image.png) It provides MediaFire links which work great with our dumping service.
+* Search google for that too. 
+  ![User checking for INFINIX hot 12 play firmware](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_165746_image.png)
+* This website works well for me 
+  ![a mobi firmware link](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_165929_image.png) 
+  It provides MediaFire links which work great with our dumping service.
 
 ##### 3. ***Touching grass.***
 
-* Go outside, find this green thing and *touch* it [Couple touching grass (they have a life 0:)](assets/has-a-life.jpg)
+* Go outside, find this green thing and *touch* it
+  ![Couple touching grass (they have a life 0:)](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/has-a-life.jpg)
   > Note: if you're an arch user then you probably thought I'm referring to the *touch* linux command.. NO, what I meant is, go outside and make a physical contact between your soft femboy hand and the green material in the picture.
 
 ##### 4. ***Getting the device tree generated automatically.***
 
-* You will find a post like this with your device's codename* if the dump was successful. [example4](assets/20240813_173412_image.png)
-* Enter this directory. [example5](assets/20240813_174645_image.png)
-* Download this tree. [example6](assets/20240813_174808_image.png)
+* You will find a post like this with your device's codename* if the dump was successful. 
+  ![telegram message from dumper bot](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_173412_image.png)
+* Enter this directory. 
+  ![git repo to the dump](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_174645_image.png)
+* Download this tree. 
+  ![aospdtgen device tree](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_174808_image.png)
 
 ##### 5. ***Pushing to GitHub.***
 
 * Make a GitHub account if you don't have one already. *how do I make one?*
   
   > Pff, I won't explain to you how to make a GitHub account!
-* Make a new code repositroy* (repo for short). You can do so by going to the "Repositories" tab and clicking on this green button. [example7](assets/20240813_180248_image.png)
+* Make a new code repository* (repo for short). You can do so by going to the "Repositories" tab and clicking on this green button. 
+  ![creating a new github Repository](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_180248_image.png)
   
   > speaking of green, did you touch grass earlier?
 * In the next page, you can choose any name but I recommend this naming scheme: `android_device_manufacturer_codename` leave everything else as default.
 * Now, let's install *git*, shall we?
   
   1. **Go to *git*'s official [website](https://git-scm.com/)**
-  2. **Download the installer like this. [example8](assets/20240813_181752_image.png)**
+  2. **Download the installer like this. 
+    ![git scm web page](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_181752_image.png)**
   3. **Run the downloaded executable.**
   4. **Spam the *next* button.**
   5. **Wait for the installation to complete.**
@@ -70,7 +80,8 @@
 
 > ***Note: Those steps are for installing *git* only on Winblows.***
 
-* Open CMD in the directory where you extracted the device tree source zip, you can do so by typing `cmd` on the path section in file explorer. [example9](assets/20240813_183042_image.png)
+* Open CMD in the directory where you extracted the device tree source zip, you can do so by typing `cmd` on the path section in file explorer.
+  ![opening command prompt](https://opendroid-docs-cdn.pugzarecute.com/wiki/assets/20240813_183042_image.png)
 * Insert and execute the following commands one by one.
   1. `git init`
   2. `git add .`
