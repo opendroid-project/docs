@@ -31,7 +31,7 @@
 
 ##### 1. ***Device info.***
 
-* * Google your device's name [example](assets/20240813_164030_image.png)
+* Google your device's name [example](assets/20240813_164030_image.png)
 * GSMArena will provide you with most of the info you need but a more robust way is to use this [app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&hl=en)
 
 ##### 2. ***Device firmware.***
