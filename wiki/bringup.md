@@ -29,28 +29,28 @@
 
 ---
 
-1. ##### ***Device info.***
+##### 1. ***Device info.***
 
 * * Google your device's name [example](assets/20240813_164030_image.png)
 * GSMArena will provide you with most of the info you need but a more robust way is to use this [app](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&hl=en)
 
-2. ##### ***Device firmware.***
+##### 2. ***Device firmware.***
 
 * Search google for that too. [example2](assets/20240813_165746_image.png)
 * This website works well for me [example3](assets/20240813_165929_image.png) It provides MediaFire links which work great with our dumping service.
 
-3. ##### ***Touching grass.***
+##### 3. ***Touching grass.***
 
 * Go outside, find this green thing and *touch* it [Couple touching grass (they have a life 0:)](assets/has-a-life.jpg)
   > Note: if you're an arch user then you probably thought I'm referring to the *touch* linux command.. NO, what I meant is, go outside and make a physical contact between your soft femboy hand and the green material in the picture.
 
-4. ##### ***Getting the device tree generated automatically.***
+##### 4. ***Getting the device tree generated automatically.***
 
 * You will find a post like this with your device's codename* if the dump was successful. [example4](assets/20240813_173412_image.png)
 * Enter this directory. [example5](assets/20240813_174645_image.png)
 * Download this tree. [example6](assets/20240813_174808_image.png)
 
-5. ##### ***Pushing to GitHub.***
+##### 5. ***Pushing to GitHub.***
 
 * Make a GitHub account if you don't have one already. *how do I make one?*
   
@@ -78,7 +78,7 @@
   4. `git branch -M main`
   5. `git remote add origin link` where ***link*** is the link to the repo you created earlier
 
-6. ##### ***Welcome to the Android ROM development community.***
+6. ***Welcome to the Android ROM development community.***
 
 * You will probably curse me a year from now cuz I probably introduced you the top of the *ice*berg of *hell*.
 
