@@ -19,6 +19,8 @@ Information and Guides:
 - [Building 101](/wiki/Building_101)
 - [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
+- IMY's Bringup Guides
+ - [Bringup](/wiki/bringup)
 
 Useful Resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
