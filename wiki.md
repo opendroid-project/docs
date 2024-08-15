@@ -27,10 +27,11 @@ Here are some general links and guides:
 ### Useful Resources:
 Here, we have some more useful resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
-- [Lopestom's Bringup guides](https://gist.github.com/lopestom/)
+- [Divest OS Build Guide](https://divestos.org/pages/build)
+- [Lopestom's Bringup guides](https://gist.github.com/lopestom)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
-- [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net/)
+- [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net)
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
 - [LineageOS Vendor Tree Guide](https://wiki.lineageos.org/proprietary_blobs.html)
 
