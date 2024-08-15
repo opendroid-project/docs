@@ -34,6 +34,12 @@ Useful Resources:
 GSI and more Resources:
 - [Phhusson's Treble-Experimentations](https://github.com/phhusson/treble_experimentations/wiki)
 
+Signing Guides(Non-Crave):
+- [Inline Guide for Dev-Keys by A2L5E0X1](https://gist.github.com/A2L5E0X1/54cb1b3a49030a9ebf8608b4e68073f5)
+- [Inline Guide by CrDroid](https://crdroid.net/blog/2024-06-01-sign-your-crDroid-builds-and-keep-play-integrity-happy)
+- [Detailed Guide by LineageOS](https://wiki.lineageos.org/signing_builds)
+- [Detailed Guide by AOSP](https://source.android.com/docs/core/ota/sign_builds)
+
 SELinux Guides:
 - [AOSP General SELinux](https://source.android.com/security/selinux/customize)
 - [AOSP Device SELinux](https://source.android.com/security/selinux/device-policy)
