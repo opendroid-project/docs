@@ -8,21 +8,24 @@ Cirrus CI has discontinued ROM Builders around Nov 2023. Now, [crave.io](https:/
 
 This guide attempts to help new and old users with Android development and using crave.io through Devspace CLI and alternatively, Github Actions.
 
-Crave Resources:
+### Crave Resources:
+Here are some useful guides, links and write-ups for using Crave.io resources for building android ROMs:
 - [Crave Devspaces CLI](/wiki/Crave_Devspace)
 - [Crave Devspaces CLI - Rules](/wiki/Crave_Rules)
 - [Crave Devspaces CLI - Additional Tips and Tricks](/wiki/Crave_Tricks)
 - [Crave Devspaces CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
 - [Crave AOSP Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
-Information and Guides:
+### Information and Guides:
+Here are some general links and guides: 
 - [Building 101](/wiki/Building_101)
 - [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
 - IMY's Bringup Guides
   - [Bringup](/wiki/bringup)
 
-Useful Resources:
+### Useful Resources:
+Here, we have some more useful resources:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
 - [Lopestom's Bringup guides](https://gist.github.com/lopestom/)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
@@ -31,26 +34,33 @@ Useful Resources:
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
 - [LineageOS Vendor Tree Guide](https://wiki.lineageos.org/proprietary_blobs.html)
 
-GSI and more Resources:
+### GSI and more Resources:
+Here are resources useful for GSI developers and users:
 - [Phhusson's Treble-Experimentations](https://github.com/phhusson/treble_experimentations/wiki)
 
-Signing Guides(Non-Crave):
+### Signing Guides(Non-Crave):
+Here are some guides on signing builds:
+(avoid using on Crave)
 - [Inline Guide for Dev-Keys by A2L5E0X1](https://gist.github.com/A2L5E0X1/54cb1b3a49030a9ebf8608b4e68073f5)
 - [Inline Guide by CrDroid](https://crdroid.net/blog/2024-06-01-sign-your-crDroid-builds-and-keep-play-integrity-happy)
 - [Detailed Guide by LineageOS](https://wiki.lineageos.org/signing_builds)
 - [Detailed Guide by AOSP](https://source.android.com/docs/core/ota/sign_builds)
 
-SELinux Guides:
+### SELinux Guides:
+Here is some documentation to deal with SELinux:
 - [AOSP General SELinux](https://source.android.com/security/selinux/customize)
 - [AOSP Device SELinux](https://source.android.com/security/selinux/device-policy)
 - [LineageOS SELinux Guide](https://lineageos.org/engineering/HowTo-SELinux)
 
-Tools:
+### Tools:
+Here, you can find some useful scripts to make things easier while developing 
 - [Azwhikaru's Action-TWRP-Builder](https://github.com/azwhikaru/Action-TWRP-Builder)
 - [SebaUbuntu's Twrpdtgen](https://github.com/twrpdtgen/twrpdtgen)
 - [SebaUbuntu's Aospdtgen](https://github.com/sebaubuntu-python/aospdtgen)
 - [DumprX](https://github.com/DumprX/DumprX)
 - [cd-Crypton's extract_proprietary_blobs](https://github.com/cd-Crypton/extract_proprietary_blobs)
+- [Manifest Tester](https://github.com/sounddrill31/manifest_tester)
+- [Local Manifest Generator](https://github.com/sounddrill31/actions_generate_local_manifests)
 
-Chat Groups:
+### Chat Groups:
 - [Get Help](/wiki/Get_Help)
