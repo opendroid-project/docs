@@ -54,13 +54,13 @@ Here is some documentation to deal with SELinux:
 
 ### Tools:
 Here, you can find some useful scripts to make things easier while developing 
-- [Azwhikaru's Action-TWRP-Builder](https://github.com/azwhikaru/Action-TWRP-Builder)
-- [SebaUbuntu's Twrpdtgen](https://github.com/twrpdtgen/twrpdtgen)
-- [SebaUbuntu's Aospdtgen](https://github.com/sebaubuntu-python/aospdtgen)
-- [DumprX](https://github.com/DumprX/DumprX)
-- [cd-Crypton's extract_proprietary_blobs](https://github.com/cd-Crypton/extract_proprietary_blobs)
-- [Manifest Tester](https://github.com/sounddrill31/manifest_tester)
-- [Local Manifest Generator](https://github.com/sounddrill31/actions_generate_local_manifests)
+- [Azwhikaru's Action-TWRP-Builder](https://github.com/azwhikaru/Action-TWRP-Builder) - Build Recoveries Online using Github Actions
+- [SebaUbuntu's Twrpdtgen](https://github.com/twrpdtgen/twrpdtgen) - Generate a minimal android device tree to start work on building a recovery like TWRP
+- [SebaUbuntu's Aospdtgen](https://github.com/sebaubuntu-python/aospdtgen) - Generate a minimal android device tree to start work on building LineageOS
+- [DumprX](https://github.com/DumprX/DumprX) - Extract your OEM's default ROMs to import things like Modules, Prebuilt Kernel, Vendor Blobs, Audio Configations, etc. 
+- [cd-Crypton's extract_proprietary_blobs](https://github.com/cd-Crypton/extract_proprietary_blobs) - Create a Vendor Tree from a Dump using Github Actions
+- [Manifest Tester](https://github.com/sounddrill31/manifest_tester) - Test local and rom manifest xml files to ensure sync works as expected
+- [Local Manifest Generator](https://github.com/sounddrill31/actions_generate_local_manifests) - Quickly generate local manifests from git clone, rm and repo init commands 
 
 ### Chat Groups:
 - [Get Help](/wiki/Get_Help)
