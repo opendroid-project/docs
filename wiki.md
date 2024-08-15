@@ -69,5 +69,5 @@ Here, you can find some useful scripts to make things easier while developing
 - [Local Manifest Generator](https://github.com/sounddrill31/actions_generate_local_manifests)
   - Quickly generate local manifests from git clone, rm and repo init commands 
 
-### Chat Groups:
+## Chat Groups
 - [Get Help](/wiki/Get_Help)
