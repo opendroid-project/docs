@@ -4,7 +4,7 @@
 
 ---
 
-***So, your device has no ROMs and no developer out there is willing to work on it because it's shitty with a shitty SoC from the shitty xxx company, sad.*****
+***So, your device has no ROMs and no developer out there is willing to work on it because it's shitty with a shitty SoC from the shitty xxx company, sad.***
 
 > Shit, I'm the same as you but the difference between us is that I managed to gather my courage and actually make this myself. So gather your courage as well and prove that you're useful at least once.
 
