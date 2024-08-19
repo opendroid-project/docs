@@ -95,4 +95,4 @@
 
 > **NOTE**: ***EVERY WORD THAT HAS * AFTER IT IS AN EXPRESSION WE USE THAT I WILL EXPLAIN IN A LATER GUIDE.***
 
-Glossary/Lore Explanation/Filler Episode: [Here](/wiki/imy-bringup/Lore-Explanation/filler_ep1.md)
+Glossary/Lore Explanation/Filler Episode: [Here](/wiki/imy-bringup/Lore-Explanation/filler_ep1)

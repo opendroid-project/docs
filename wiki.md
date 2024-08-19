@@ -26,9 +26,9 @@ Here are some general links and guides:
 - [Glossary of key terms](/wiki/Glossary)
 - [Debugging/Taking Logs](/wiki/Debugging)
 - IMY's Bringup Guides
-  - [Intro](/wiki/imy-bringup/intro.md)
-    - [Episode 1](/wiki/imy-bringup/Episode-1/bringup.md)
-      - [Glossary/Lore Deep Dive](/wiki/imy-bringup/Lore-Explanation/filler_ep1.md)
+  - [Intro](/wiki/imy-bringup/intro)
+    - [Episode 1](/wiki/imy-bringup/Episode-1/bringup)
+      - [Glossary/Lore Deep Dive](/wiki/imy-bringup/Lore-Explanation/filler_ep1)
 
 ### Useful Resources:
 

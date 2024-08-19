@@ -17,4 +17,4 @@
 
 > If you're ready to embark on this adventure, click the link below to begin your journey.
 
-[Next: Bringing up a device from scratch](/wiki/imy-bringup/Episode-1/bringup.md)
+[Next: Bringing up a device from scratch](/wiki/imy-bringup/Episode-1/bringup)
