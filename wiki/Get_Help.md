@@ -51,7 +51,8 @@ Because these are 3rd party chat groups, remember to follow these while/before a
     - "Does anyone have any idea why this happens? I checked popular gerrits, telegram chats and checked around the source"
   - Bad:
     - "log.url/paste/asdf.txt @sounddrill me get error"
-- Give list of relevant device sources when needed
+- Give list of relevant device sources and info when needed
+  - Stuff like chipset, and specifics on camera, display, audio, storage, etc if needed
   - Give links to device sources like device trees, kernel sources, proprietary blobs, any external repos, etc if you think they're relevant to the problem.
   - Try to always link device trees and kernel sources
   - If you synced using Local Manifests or used a Build/Sync script, it would help to link it as long as you still link the other repos seperately
