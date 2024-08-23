@@ -49,13 +49,14 @@ Because these are 3rd party chat groups, remember to follow these while/before a
   - Accepted:
     - "Hey, I faced this issue, does anyone know how to solve it? My sources have x and the sources have y"
     - "Does anyone have any idea why this happens? I checked popular gerrits, telegram chats and checked around the source"
-    - Bad:
-      - "log.url/paste/asdf.txt @sounddrill me get error"
+  - Bad:
+    - "log.url/paste/asdf.txt @sounddrill me get error"
 - Give list of relevant device sources when needed
   - Give links to device sources like device trees, kernel sources, proprietary blobs, any external repos, etc if you think they're relevant to the problem.
   - Try to always link device trees and kernel sources
   - If you synced using Local Manifests or used a Build/Sync script, it would help to link it as long as you still link the other repos seperately
-  - Be respectful for the other person's time, effort, energy. If it takes them more than a few short clicks to get to the problem point, you're doing something wrong. 
+  - Be respectful for the other person's time, effort, and energy.
+  - If it takes them more than a few short clicks to get to the problem point, you're doing something wrong. 
 - Share minimal(like out/error.log file) logs in a convenient form like a [hastebin](https://hastebin.skyra.pw/)/[pastebin](https://pastebin.com/) link and try to give full logs as well, if the community allows it
 - Read the notes(`/notes`, almost all telegram groups have important things mentioned here)
   - Don't forget to read and abide by the community's rules.
