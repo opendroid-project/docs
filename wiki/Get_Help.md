@@ -52,6 +52,7 @@ Because these are 3rd party chat groups, remember to follow these while/before a
   - Bad:
     - "log.url/paste/asdf.txt @sounddrill me get error"
 - Give list of relevant device sources and info when needed
+  - Also try to explain what you've tried to do/are trying to do
   - Stuff like chipset, and specifics on camera, display, audio, storage, etc if needed
   - Give links to device sources like device trees, kernel sources, proprietary blobs, any external repos, etc if you think they're relevant to the problem.
   - Try to always link device trees and kernel sources
