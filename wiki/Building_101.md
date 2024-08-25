@@ -2,7 +2,9 @@
 
 This guide aims to teach users about the basics of android building.
 If you want to build A12+ for devices not using linux 4.4 and up please refer to [Building android for legacy devices](/wiki/Building_android_for_legacy_devices)
-For versions unsupported by AOSP refer to [Building Legacy Android](/wiki/Building_legacy_android.md)
+For versions unsupported by AOSP refer to [Building Legacy Android](/wiki/Building_legacy_android)
+
+Do not follow this guide inside Crave Devspace CLI, follow [this](/wiki/Crave_Devspace) instead because this guide shows things that are against [Devspace Rules](/wiki/Crave_Rules)
 
 ## Syncing AOSP Source code
 
