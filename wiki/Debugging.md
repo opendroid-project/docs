@@ -100,7 +100,7 @@
 
 ### Using FBCon
 
-FBCon enables kernel output to the display. Use this as a last resort if the above mentioned methods don't work.
+FBCon enables kernel output to the display. Use this as a second to the last resort if the above mentioned methods don't work.
 
 1) Build kernel with config options:
     ```
@@ -134,3 +134,42 @@ FBCon enables kernel output to the display. Use this as a last resort if the abo
 7) Pray that the recording is clear enough. If not, try again.
 
 8) Import it into pc, flip it (if needed), start playing it slowed down and zoomed in.
+
+## Using UART / JTAG (or better known as Serial)
+
+This is the **ONLY WAY** to grab logs if all of the aforementioned methods do not work.
+
+This assumes your kernel has UART logging enabled, and your DTS has it enabled.
+
+### Disclaimer
+I (the author), or OpenDroid are not responsible for any damage done to your board, whether it be a bad soldering job, scratched pcb, or fried board.
+
+### Prerequisites
+• A gadget that does UART/TTL (for most devices)
+
+• A multimeter
+
+• Probes (or anything that lets you reach the UART points on the board)
+
+• Oscilloscope (if your board has undocumented serial)
+
+
+1) Find your device's points
+
+If your device has its points documented (usually somewhere in the [postmarketOS wiki](https://wiki.postmarketos.org)), then you're in luck.
+
+If your device doesn't have the points, you can hook an oscilloscope to any points of interest and hope that your kernel has UART output enabled by default.
+
+2) Hooking up your hardware
+
+Attach your probes (or solder a wire to said points, ***NOT RECOMMENDED!!***)
+
+Before plugging in your serial gadget, make sure you're using the right voltage ***AS THIS CAN FRY THE BOARD!***
+
+3) Grabbing the logs
+
+Fire up your serial reading program. The baud rate can be either found by cmdline passed by abl/preloader (or in defconfig.) If you can't find the baud rate then `115200` may be the default.
+
+Now, power up your device. You may see early logs from abl/lk.
+
+If all goes well, you should be able to find the root cause of your hang. If not, you can refer to the [postmarketOS wiki](https://wiki.postmarketos.org/wiki/Serial_debugging) as serial debugging is well documented there.
