@@ -38,6 +38,8 @@ Else, consult the communities below
 - [XDA Discord](https://discord.com/invite/e4v8qtkcBw)
 
 ### General Etiquette
+Also check out [RFC 1855 - Netiquette Guidelines](https://datatracker.ietf.org/doc/html/rfc1855)
+
 Because these are 3rd party chat groups, remember to follow these while/before asking for help:
 - Be respectful
   - Be nice to people and don't start needless drama or fights
