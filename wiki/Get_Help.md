@@ -41,6 +41,7 @@ Else, consult the communities below
 Because these are 3rd party chat groups, remember to follow these while/before asking for help:
 - Be respectful
   - Be nice to people and don't start needless drama or fights
+  - Do not spam chats or DMs. Try to give details in a clear, concise manner that's respectful to the other person who is interested in helping you. 
   - Try to follow instructions and ask questions instead of ignoring someone who's trying to help you and pinging someone else
   - Respect People's work, no matter how small and insignificant or how big and impactful
   - Respect the Terms, Agreements and Licenses attached to someone's work. Don't "kang" works without permission and if you used someone's work, credit them as it is good courtesy(as per the license too)
