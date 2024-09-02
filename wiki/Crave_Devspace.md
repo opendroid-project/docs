@@ -14,6 +14,16 @@ Please read the rules before getting started.
 
 Also check out our [discord](https://discord.crave.io)!
 
+### General Workflow
+
+To use crave, you'll likely be doing this:
+- Enter Devspace CLI ([Guide](/wiki/Crave_Devspace#downloading))
+- Crave Cloning a new project and entering that folder([Guide](/wiki/Crave_Devspace#setting-up-the-project))
+- Set up workspace Persistance ([Guide](/wiki/Crave_Devspace#workspace-persistence))
+- Using Crave Run to start build ([Guide](/wiki/Crave_Devspace#building-using-crave-run-command))
+- Pulling your Output ([Guide](/wiki/Crave_Devspace#pulling-output))
+- Destroying old crave clone(optional) ([Guide](/wiki/Crave_Devspace#setting-up-the-project))
+
 ## Downloading
 
 1. Now head on over to [foss.crave.io](https://Foss.crave.io)
@@ -368,7 +378,7 @@ the resources to build a ROM or a similar huge project directly.**
 ### Workspace Persistence
 
 Workspace persistence here refers to the preservation of what you have
-synced and compiled in the past.
+synced and compiled in the past. This is not needed if you're building from Crave RAS(the web shell)
 
 This build storage is reset when one of these 4 factors change:
 
