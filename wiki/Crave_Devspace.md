@@ -464,6 +464,8 @@ TWRP:
   image: "sounddrill31/crave-archlinux-twrp@sha256:605892162a907ea3760813643c9aa1bdb63a7ae0dce6ca159b0f6e20a7c0815b"
 ```
 
+Do not change the image unless you know what you're doing and have a very good reason. 
+
 For more info, read the [official
 documentation](https://foss.crave.io/docs/crave-usage/#location-of-the-craveyaml-file)
 
