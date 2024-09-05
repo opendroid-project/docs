@@ -211,7 +211,7 @@ to resync.sh
 - Git clone example:
 
 ```
-crave run  --no-patch -- "rm -rf .device/oem/codename kernel/oem/codename vendor/oem/codename; \
+crave run  --no-patch -- "rm -rf device/oem/codename kernel/oem/codename vendor/oem/codename; \
 git clone https://github.com/sounddrill31/android_device_oem_codename --depth 1 -b branchname device/oem/codename; \
 git clone https://github.com/sounddrill31/android_kernel_oem_codename --depth 1 -b branchname kernel/oem/codename; \
 git clone https://github.com/sounddrill31/android_vendor_oem_codename --depth 1 -b branchname vendor/oem/codename; \

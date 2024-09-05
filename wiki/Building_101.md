@@ -116,7 +116,9 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
     source build/envsetup.sh
     ```
 
-2. Run `lunch <PRODUCT>-<RELEASE(IF A14 QPR2+)>-<VARIANT>`. This is the device and variant you want to build for.
+2. Run `lunch PRODUCT-RELEASE(IF A14 QPR2+)-VARIANT`. This is the device and variant you want to build for. (eg `lunch lineage_bacon-userdebug or lunch lineage_oxygen-ap2a-userdebug)
+
+However, it is easier to use breakfast instead, like `breakfast PRODUCT VARIANT` (eg. breakfast oxygen userdebug)
 
     - *Product*: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and AOSP based forks use aosp_device.
 
@@ -145,7 +147,7 @@ Hopefully, android builds without errors. This guide does not cover fixing commo
 
 ## Sharing the build
 
-The built rom is stored in `out/target/product/<YOUR DEVICE CODENAME>`.
+The built rom is stored in `out/target/product/YOUR DEVICE CODENAME`. (eg. out/target/product/bacon)
 Depending on which target you chose, the files here will be different.
 Simply share your *.img files or the latest .zip file in that folder. Please ensure to have your build(s) thoroughly tested before you publicly release them.
 
