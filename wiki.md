@@ -34,7 +34,7 @@ Here are some general links and guides:
 
 Here, we have some more useful resources:
 
-#### English:
+#### English Language
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
 - [Divest OS Build Guide](https://divestos.org/pages/build)
 - [Lopestom's Bringup guides](https://gist.github.com/lopestom)
@@ -46,7 +46,7 @@ Here, we have some more useful resources:
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
 - [LineageOS Vendor Tree Guide](https://wiki.lineageos.org/proprietary_blobs.html)
 
-#### Turkish:
+#### Turkish Language
 - [Yusuf İpek's Build Guide](https://yusufipek.me/custom-rom-derleme-rehberi/)
 
 ### GSI and more Resources:
