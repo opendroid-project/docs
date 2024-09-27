@@ -50,7 +50,7 @@ Here, we have some more useful resources:
 - [Yusuf İpek's Build Guide](https://yusufipek.me/custom-rom-derleme-rehberi/)
 
 #### Ukrainian Language
-- [Rocker2's Build Guide](https://roker2.github.io/BookAboutBuilding/ua/)
+- [Roker2's Build Guide](https://roker2.github.io/BookAboutBuilding/ua/)
 
 ### GSI and more Resources:
 
