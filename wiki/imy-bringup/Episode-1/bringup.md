@@ -25,7 +25,7 @@
 6. Welcome to hell! *What kind of guide is this? I'm outta here*
    > No, wait. I'll get serious I PROMISE! if you leave they will ... me
 
-#### Detailed steps:
+#### Detailed steps
 
 ---
 

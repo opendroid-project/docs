@@ -8,7 +8,7 @@ Cirrus CI has discontinued ROM Builders around Nov 2023. Now, [crave.io](https:/
 
 This guide attempts to help new and old users with Android development and using crave.io through Devspace CLI and alternatively, Github Actions.
 
-### Crave Resources:
+### Crave Resources
 
 Here are some useful guides, links and write-ups for using Crave.io resources for building android ROMs:
 
@@ -18,7 +18,7 @@ Here are some useful guides, links and write-ups for using Crave.io resources fo
 - [Crave Devspaces CLI - Signing Builds(Advanced/WIP)](/wiki/Crave_Signing)
 - [Crave AOSP Builder (Github Actions)](https://github.com/sounddrill31/crave_aosp_builder)
 
-### Information and Guides:
+### Information and Guides
 
 Here are some general links and guides:
 
@@ -30,7 +30,7 @@ Here are some general links and guides:
     - [Episode 1](/wiki/imy-bringup/Episode-1/bringup)
       - [Glossary/Lore Deep Dive](/wiki/imy-bringup/Lore-Explanation/filler_ep1)
 
-### Useful Resources:
+### Useful Resources
 
 Here, we have some more useful resources:
 
@@ -58,7 +58,7 @@ Here are resources useful for GSI developers and users:
 
 - [Phhusson's Treble-Experimentations](https://github.com/phhusson/treble_experimentations/wiki)
 
-### Signing Guides(Non-Crave):
+### Signing Guides(Non-Crave)
 
 Here are some guides on signing builds:
 (avoid using on Crave)
@@ -68,7 +68,7 @@ Here are some guides on signing builds:
 - [Detailed Guide by LineageOS](https://wiki.lineageos.org/signing_builds)
 - [Detailed Guide by AOSP](https://source.android.com/docs/core/ota/sign_builds)
 
-### SELinux Guides:
+### SELinux Guides
 
 Here is some documentation to deal with SELinux:
 
@@ -76,7 +76,7 @@ Here is some documentation to deal with SELinux:
 - [AOSP Device SELinux](https://source.android.com/security/selinux/device-policy)
 - [LineageOS SELinux Guide](https://lineageos.org/engineering/HowTo-SELinux)
 
-### Tools:
+### Tools
 
 Here, you can find some useful scripts to make things easier while developing
 
