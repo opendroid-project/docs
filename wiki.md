@@ -34,14 +34,20 @@ Here are some general links and guides:
 
 Here, we have some more useful resources:
 
+#### English:
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
 - [Divest OS Build Guide](https://divestos.org/pages/build)
 - [Lopestom's Bringup guides](https://gist.github.com/lopestom)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
+- [DaltonFury42's Build Guide](https://medium.com/@daltonfury42/building-lineageos-for-your-device-a7d26ab50549)
+- [AtlanPrime's Build Guide](https://customromguide.github.io/)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net)
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
 - [LineageOS Vendor Tree Guide](https://wiki.lineageos.org/proprietary_blobs.html)
+
+#### Turkish:
+- [Yusuf İpek's Build Guide](https://yusufipek.me/custom-rom-derleme-rehberi/)
 
 ### GSI and more Resources:
 
