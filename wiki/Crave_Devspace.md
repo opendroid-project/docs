@@ -202,6 +202,8 @@ m bacon"
 making your own local manifests over at
 [tilde.pt](https://tilde.pt/~marado/blog/repo-using-a-local-manifest.html).
 
+You can also use sounddrill's [Generator script](https://github.com/sounddrill31/actions_generate_local_manifests) which works most of the time 
+
 Local manifests rely on repo sync. We have made a simple script to repo
 sync while avoiding majority of conflicts which arise due to uncommitted
 changes, or when building a different ROM. You can find the source code
