@@ -44,6 +44,7 @@ Here, we have some more useful resources:
 - [DaltonFury42's Build Guide](https://medium.com/@daltonfury42/building-lineageos-for-your-device-a7d26ab50549)
 - [AtlanPrime's Build Guide](https://customromguide.github.io/)
 - [Mohamed Rashik's AOSP Build Guide](https://medium.com/@mmohamedrashik/a-beginners-guide-to-building-android-from-aosp-03ab4913614b)
+-  [Robin W. Hunter's Build Guide](https://bitgrounds.tech/posts/porting-android-to-unsupported-devices-part2/)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net)
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
