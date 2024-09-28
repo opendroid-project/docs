@@ -36,12 +36,14 @@ Here are some general links and guides:
 Here, we have some more useful resources:
 
 #### English Language
+- [Google's AOSP Build Guide](https://source.android.com/docs/setup/build/building)
 - [Lineage Build Guide](https://wiki.lineageos.org/devices/bacon/build)
 - [Divest OS Build Guide](https://divestos.org/pages/build)
 - [Lopestom's Bringup guides](https://gist.github.com/lopestom)
 - [RealOGs Bringup Guide](https://blog.realogs.in/android-device-tree-bringup)
 - [DaltonFury42's Build Guide](https://medium.com/@daltonfury42/building-lineageos-for-your-device-a7d26ab50549)
 - [AtlanPrime's Build Guide](https://customromguide.github.io/)
+- [Mohamed Rashik's AOSP Build Guide](https://medium.com/@mmohamedrashik/a-beginners-guide-to-building-android-from-aosp-03ab4913614b)
 - [AlaskaLinuxUser Youtube](https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA)
 - [AlaskaLinuxUser Blog](https://alaskalinuxuser3.ddns.net)
 - [Awesome Android AOSP](https://github.com/Akipe/awesome-android-aosp/blob/main/readme.md)
