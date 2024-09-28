@@ -29,7 +29,7 @@ Here are some general links and guides:
   - [Intro](/wiki/imy-bringup/intro)
     - [Episode 1](/wiki/imy-bringup/Episode-1/bringup)
       - [Glossary/Lore Deep Dive](/wiki/imy-bringup/Lore-Explanation/filler_ep1)
-- [Notes for Samsung Exynos Devices](/wiki/Exynos_Notes.md)
+- [Notes for Samsung Exynos Devices](/wiki/Exynos_Notes)
 
 ### Useful Resources
 
