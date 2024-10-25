@@ -83,58 +83,58 @@ If you're on Android, You will need to [install Termux first](https://github.com
 As of now, the crave binary doesn't work on termux.  
 So, we will use `SEGFAULT` to use crave. (Read more about [segfault](http://thc.org/sf))
 
-- Here, We will be trying to cover these:
+Here, We will be trying to cover these:
 1. Connect to `segfault` via `ssh`.
 2. Save the `first time login` info to your `termux environment`, so that you can always use the same instance.
 3. Install crave.
 4. At last, we will use `tmux`, as it's really useful (you should use it) Read the guide how to use `tmux` [here](<https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>)
 
-*It's necessary for you to ssh to your old segfault instance because if you start up a new instance every time, you will loose the files which you placed in your earlier instance.
+NOTE: It's necessary for you to ssh to your old segfault instance because if you start up a new instance every time, you will loose the files which you placed in your earlier instance.
 Also, running more than one instance per user is considered 'ABUSE' by segfault.
 
 So, Now, open termux and start copy pasting!
 
-➤ 1. Connect to `segfault` via `ssh`:
+1. Connect to `segfault` via `ssh`:
 
- - run this command
+- Run this command
 ```
 ssh root@segfault.net
 ```
- - then it will show you a big message (don't worry about it, also it doesn't needs any explanation), just type `yes` and press enter
- - now it will ask for password, which is `segfault` (all lowercase), just type the password and press enter.
+- then it will show you a big message (don't worry about it, also it doesn't needs any explanation), just type `yes` and press enter
+- now it will ask for password, which is `segfault` (all lowercase), just type the password and press enter.
 
 By now you will be in the segfault's instance.
 
-NOTE: 
-- When you connect it to for the first time, you will see a big, colourful message, which have the useful things we will need later, so please don't clear it or exit the session.
+NOTE: When you connect it to for the first time, you will see a big, colourful message, which have the useful things we will need later, so please don't clear it or exit the session.
 
-➤ 2. Save the `first time login` info to your `termux environment`:
+2. Save the `first time login` info to your `termux environment`:
 
 STEP 1:
-* In our big, colourful message, you will see two `cat` commands & one `chmod` command
-* you are needed to run these commands in termux and not in the segfault's instance (please don't get confused, after running that ssh command, the shell you are now looking at is segfault's)
- * to open a new session of termux in current window, swipe from the left of the screen, and press new session
-* now you can copy paste the things that were shown when you ssh'ed to segfault from your termux session
+- In our big, colourful message, you will see two `cat` commands & one `chmod` command
+- you are needed to run these commands in termux and not in the segfault's instance (please don't get confused, after running that ssh command, the shell you are now looking at is segfault's)
+- to open a new session of termux in current window, swipe from the left of the screen, and press new session
+- now you can copy paste the things that were shown when you ssh'ed to segfault from your termux session
 
 STEP 2: 
-* After running those 3 commands, you are now good to go.
-* out of those three, there was a cat command, which looked something like this
-    ```
-    cat >>~/.ssh/config <<'__EOF__'
-        host hostname      #(it's random)
-        user root
-        :
-        :
-    __EOF__
-    ```
+- After running those 3 commands, you are now good to go.
+- out of those three, there was a cat command, which looked something like this
+```
+cat >>~/.ssh/config <<'__EOF__'
+      host hostname      #(it's random)
+      user root
+      :
+      :
+__EOF__
+```
 From here we need 'hostname' (defiend in `host hostname` line) as you will need to write it everytime you want to ssh to your segfault instance.
+
 Note: If it's too long, or you find it difficult to remember or hard/long to type, you simply run `nano ~/.ssh/config` and then edit it (warning: just edit the text after host, DO NOT TOUCH anything else there)
 
 STEP 3:
-* So, by now I think, you know your host's name, according to your SSH config.
-* you can connect to your instance by typing this on Termux.
+- So, by now I think, you know your host's name, according to your SSH config.
+- you can connect to your instance by typing this on Termux.
 ```
-   ssh hostname
+ssh hostname
 ```
 
 Your segfault's setup is done, and you can install crave as usual.
