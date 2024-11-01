@@ -559,3 +559,15 @@ be wiped if you do a clean build.
 queue for a more powerful machine.**
 
 You could get banned for syncing or building in this environment!
+
+### Paid Queue
+You can use crave tokens to skip the queue and get the build to start faster! To use tokens from your wallet, use the flag `--platform aosp-silver`
+
+Like this:
+```
+crave run --no-patch --platform aosp-silver -- "build commands here"
+```
+
+If there are no tokens left in your wallet, the paid build will fail(but you can still use the free queue). A running build is able to go into Negative credits but no new paid builds can be requested while having less than 0 credits.
+
+[Crave doc for Wallet](https://foss.crave.io/docs/wallets)
