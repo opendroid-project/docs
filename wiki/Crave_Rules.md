@@ -13,6 +13,11 @@ Here are some simple Rules you are expected to follow to ensure everyone in the 
 - ***Do not make a folder and sync inside that to avoid conflicts*** (like `cd folder; repo sync`)
 - ***Private repos***. Do not help users set up cloning from private repos because this goes against the "foss" in foss.crave.io.
 
+## When the Crave admins are upgrading or cleaning up the Crave infrastructure
+- Please don't start builds or devspace sessions during the upgrade or cleanup.
+- Repeated attempts to interrupt the upgrade/cleanup will result in an annoyed admin banning you.
+- Please watch for updates on the Discord marked for "@everyone".
+
 ## Community Guidelines
 - ***Read the wiki, and make an effort to fix your problems before asking***. This gives you enough context to help us help you.
 - ***Always provide all relevant info***. If it is a build error, for example, provide your error logs(preferably as a link to a paste service), your device specific sources, and enough context to explain the problem properly. 
