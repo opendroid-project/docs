@@ -379,9 +379,7 @@ crave pull out/target/product/*/*.img
 
 <!-- -->
 
-- From here, you can upload using github releases, [SourceForge](https://github.com/MaheshTechnicals/upload_to_sourceforge)
-,
-  telegram-upload, etc
+- From here, you can upload using github releases, [SourceForge](https://github.com/MaheshTechnicals/upload_to_sourceforge), telegram-upload, etc
 
 # Advanced
 
