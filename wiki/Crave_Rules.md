@@ -1,7 +1,7 @@
 # Rules
 These are some rules users are expected to follow. Ignoring these rules may result in a temporary or permanent ban
 ## Devspace CLI Rules
-- ***Do not use repo sync, use crave run instead***. If you try to install repo tool manually, it is looked at as an act to circumvent the rules and will likely result in a ban
+- ***Do not use repo sync, use crave run instead***. If you try to install repo tool manually, it is looked at as an act to circumvent the rules and will likely result in a ban. This also applies in a crave ssh environment.
 - ***Be mindful of Devspace CLI Storage***. Clean up your .zip and .img build artefacts if you're used to pulling them to devspace
 - ***Do not rm -rf a crave clone***. Use crave clone destroy path/to/folder/ instead. Use crave clone list to know the folder path.
 - ***No building***: Do not try to build inside Decspace CLI using commands like make, mka, mm, m, etc. Use crave run instead.
