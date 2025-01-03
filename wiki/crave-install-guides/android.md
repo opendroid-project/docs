@@ -54,7 +54,7 @@ click on Create API Key Button.
 - Create a new file in your current shell called crave.conf
     - Paste the API Key here
 ### Step 3: Connect
-Once you take your valid crave.conf, just connect using `crave devspace` and return to the [previous guide](../Crave_Devspace.md#setting-up-the-project)
+Once you take your valid crave.conf, just connect using `crave devspace` and return to the [previous guide](/wiki/Crave_Devspace.md#setting-up-the-project)
 
 ### Step 3.5: Quick Reconnection
 To Quickly reconnect, just run:

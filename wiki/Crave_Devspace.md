@@ -143,7 +143,7 @@ Big Thanks to omansh-krishn for [this guide](https://github.com/omansh-krishn/cr
 
 #### *Android*
 
-[Here is a guide to use proot-distro on Android](crave-install-guides/android.md)
+[Here is a guide to use proot-distro on Android](/wiki/crave-install-guides/android.md)
 
 After setting it up, [come back to this guide and continue](#setting-up-the-project)
 
