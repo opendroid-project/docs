@@ -77,7 +77,7 @@ brew install --cask crave
 ```
 You will need to [install homebrew](https://brew.sh/) beforehand.
 
-#### *Android*
+<!--#### *Android*
 If you're on Android, You will need to [install Termux first](https://github.com/termux/termux-app)
 
 As of now, the crave binary doesn't work on termux.  
@@ -139,7 +139,13 @@ ssh hostname
 
 Your segfault's setup is done, and you can install crave as usual.
 
-Big Thanks to omansh-krishn for [this guide](https://github.com/omansh-krishn/crave/blob/main/crave.md) !
+Big Thanks to omansh-krishn for [this guide](https://github.com/omansh-krishn/crave/blob/main/crave.md) !-->
+
+#### *Android*
+
+[Here is a guide to use proot-distro on Android](crave-install-guides/android.md)
+
+After setting it up, [come back to this guide and continue](#setting-up-the-project)
 
 #### *Web*
 
