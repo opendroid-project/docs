@@ -1,12 +1,15 @@
 # Crave Devspace CLI
-## Android(Awaiting Testing, edit this once you test it and fix inconsistencies)
+## Android
 ### Installing on Termux
 
-Guide to use termux's proot-distro for crave devspace:
+Guide to use termux's proot-distro for crave -n devspace:
 Link to proot-distro: https://github.com/termux/proot-distro
 
 ### Step 0: Install termux
 Get it from [PlayStore](https://play.google.com/store/apps/details?id=com.termux&hl=en_IN) or [F-Droid](https://f-droid.org/en/packages/com.termux/)
+
+> [!NOTE]  
+> This guide is tested on F-Droid build
 ### Step 1: Install proot-distro
 Direct Command:
 ```bash
@@ -23,15 +26,15 @@ cd proot-distro
 ### Step 2: Set Up a Container using Proot
 Install Ubuntu:
 ```bash
-pd install ubuntu-oldlts
+pd install ubuntu
 ```
 
 Enter the Ubuntu Container:
 ```bash
-pd sh ubuntu-oldlts
+pd sh ubuntu
 ```
 
-Prepare for crave:
+Prepare for crave by installing dependencies:
 ```bash
 apt update; apt install ssh rsync wget -y
 ```
@@ -54,23 +57,26 @@ click on Create API Key Button.
 - Create a new file in your current shell called crave.conf
     - Paste the API Key here
 ### Step 3: Connect
-Once you take your valid crave.conf, just connect using `crave devspace` and return to the [previous guide](/wiki/Crave_Devspace.md#setting-up-the-project)
+Once you take your valid crave.conf, just connect using `crave -n devspace` and return to the [previous guide](/wiki/Crave_Devspace.md#setting-up-the-project)
+
+> [!NOTE]  
+> -n here tells crave to not look for updates. As of crave 7064, Updating step causes segmentation fault error, which can be worked around this way.
 
 ### Step 3.5: Quick Reconnection
 To Quickly reconnect, just run:
 ```bash
-pd sh ubuntu-oldlts -- crave devspace
+pd sh ubuntu -- crave -n devspace
 ```
 
 ### Notes: 
 if you facing issues:
 - try to exit from termux
 - then re-login with: 
-    `pd sh ubuntu-oldlts`
+    `pd sh ubuntu`
 - then try again:
-    `crave devspace`
+    `crave -n devspace`
 
-Tested on `ubuntu-oldlts`, though your results may vary.
+Tested on `ubuntu`, though your results may vary.
 
 You can try other distro: 
 `pd list`
