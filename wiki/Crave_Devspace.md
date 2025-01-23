@@ -202,6 +202,11 @@ project that you are trying to build in a matter of seconds
 crave clone create --projectID 72 /crave-devspaces/Lineage21
 ```
 
+3. Remember to enter that folder you just created
+```
+cd /crave-devspaces/Lineage21
+```
+
 After you're done building the ROM at the end of this guide, use crave
 clone destroy to delete the folder. Do not use rm -rf!
 
