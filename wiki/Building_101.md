@@ -8,7 +8,7 @@ Do not follow this guide inside Crave Devspace CLI, follow [this](/wiki/Crave_De
 
 ## Syncing AOSP Source code
 
-### Installing `repo` and other dependencies
+### Setup: Installing `repo` and other dependencies
 
 Repo is a tool developed by google to help manage the thousands of git repos used in a project like AOSP.
 
@@ -31,6 +31,23 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 Fedora / Fedora based distros:
 ```
 sudo dnf install @development-tools android-tools automake bc bison bzip2 bzip2-libs ccache curl dpkg-dev flex gcc gcc-c++ git git-lfs glibc-devel.{x86_64,i686} gnupg gperf ImageMagick ImageMagick-c++-devel ImageMagick-devel java-1.8.0-openjdk java-1.8.0-openjdk-devel libgcc.{x86_64,i686} libstdc++.{x86_64,i686} libX11-devel.{x86_64,i686} libxml2-devel libXrandr.{x86_64,i686} libXrender.{x86_64,i686} libxslt lz4-libs lzop make maven mesa-libGL-devel.{x86_64,i686} ncurses ncurses-compat-libs ncurses-devel.{x86_64,i686} ninja-build openssl-devel optipng jpegoptim perl perl-Digest-MD5-File perl-Switch pngcrush python python2 python3-virtualenv python3 python3-mako python-mako python-markdown python-networkx readline-devel.{x86_64,i686} rsync schedtool SDL squashfs-tools syslinux-devel unzip wxGTK xml2 xz-lzma-compat zip zlib zlib-devel vim-common vboot-utils mozilla-fira-mono-fonts mozilla-fira-sans-fonts openssl nano htop wget libxcrypt-compat.x86_64 golang
+```
+
+You might need to remove metadata_csum_seed and orhpan_file from /etc/mke2fs.conf if you encounter error mentioning "Invalid filesystem option set" as per [Reddit](https://www.reddit.com/r/LineageOS/comments/18lej4b/if_your_build_is_failing_with_an_error_regarding/)
+
+
+If you build a lot you should consider enabling ccache to save yourself some build time.
+```
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+```
+You should limit its size to something reasonable with the below command
+```
+ccache -M 50G
+```
+To further increase the number of cached files at the cost of slight decompression overhead you can enable compression.
+```
+ccache -o compression=true
 ```
 
 ### Initialising and syncing source
