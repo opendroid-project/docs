@@ -5,10 +5,12 @@ Old Android versions can be pretty difficult to build nowadays and thus this gui
 
 Assuming you set up your build enviromnet already you still have to install legacy java and python for Android 8 and below. Newer versions ship the jdk inside the source.
 
-The [Lineage wiki](https://wiki.lineageos.org/devices/flounder/build/#java) has a fairly comprehensive guide on that for ubuntu and fedora still ships jdk8 in their repos.
+The [Lineage wiki](https://wiki.lineageos.org/devices/flounder/build/#java) has a comprehensive guide on that for ubuntu/-based distros and fedora also still ships openjdk 8 in their repos, which you can install by running:
+```
+sudo dnf install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+```
 Note that you might need to use [update-alternatives](https://www.baeldung.com/linux/update-alternatives-command) to set the proper symlinks and use the old java/javac version.
 In addition to that you need to allow Tls V1/1.1 by removing TLSv1 and TLSv1.1 from jdk.tls.disabledAlgorithms within /etc/java-8-openjdk/security/java.security on debian based distros.
-
 ```
 sudo ln -sf /usr/share/crypto-policies/LEGACY/java.txt /etc/crypto-policies/back-ends/java.config;
 ```
@@ -33,12 +35,12 @@ python --version
 ```
 The output should be python 2.7.xx
 
-Now run
+Now run (A7/8)
 ```
-export LC_ALL=C
+export LC_ALL=C && export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 ```
-and continue the build as usual
+and continue the build as usual.
 
 After verifying it boots you can implement the security backports from the lineage os gerrit.
-For android 7 you can repopick the topics [n-asb-2021-10](https://review.lineageos.org/q/topic:%22n-asb-2021-09%22) up to [n-asb-2024-08](https://review.lineageos.org/q/topic:%22n-asb-2024-08%22) and [tzdb_N](https://review.lineageos.org/q/topic:%22tzdb_N%22) as of writing this guide.
-[lin14-mGoms](https://github.com/lin14-mGoms) is a notable fork that provides substratum, microg support and all asb backports. My personal fork [LineageOS-Revived](https://github.com/LineageOS-Revived/android/tree/cm-14.1) is mostly based on that rom.
+For android 7 you can repopick the topics [n-asb-2021-10](https://review.lineageos.org/q/topic:%22n-asb-2021-09%22) up to the most recent backports [n-asb-2025-01](https://review.lineageos.org/q/topic:%22n-asb-2025-01%22) and [tzdb_N](https://review.lineageos.org/q/topic:%22tzdb_N%22) as of writing this guide.
+[lin14-mGoms](https://github.com/lin14-mGoms) is a notable fork that provides substratum, microg support and asb backports.
