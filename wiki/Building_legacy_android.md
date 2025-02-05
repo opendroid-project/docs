@@ -1,7 +1,7 @@
 For basic building instructions refer to [Building 101](/wiki/Building_101)
 and incorporate the below patches after syncing or use lin-* forks.
 
-Old android versions can be pretty difficult to build nowadays and thus this guide was created so that you can do just that.
+Old Android versions can be pretty difficult to build nowadays and thus this guide was created so that you can do just that.
 
 Assuming you set up your build enviromnet already you still have to install legacy java and python for Android 8 and below. Newer versions ship the jdk inside the source.
 

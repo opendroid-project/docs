@@ -12,11 +12,24 @@ Do not follow this guide inside Crave Devspace CLI, follow [this](/wiki/Crave_De
 
 Repo is a tool developed by google to help manage the thousands of git repos used in a project like AOSP.
 
-You must first install it on your server.
+You must first install it on your computer/server.
 ```
-mkdir ~/bin && PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+mkdir ~/bin && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
 ```
-There are also some additional dependencies, which are usually covered by the `base-devel` package group of your linux distribution.
+After that you should check if ~/bin is already in your PATH by doing
+```
+printenv PATH|grep ~/bin
+```
+if you do not get any output you have to add:
+```
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+```
+to ~/.profile or some other script that runs on shell creation.
+
+There are also some additional dependencies, which you need to install to build android.
 
 Arch Linux:
 ```
@@ -30,7 +43,7 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 Fedora / Fedora based distros:
 ```
-sudo dnf install @development-tools android-tools automake bc bison bzip2 bzip2-libs ccache curl dpkg-dev flex gcc gcc-c++ git git-lfs glibc-devel.{x86_64,i686} gnupg gperf ImageMagick ImageMagick-c++-devel ImageMagick-devel java-1.8.0-openjdk java-1.8.0-openjdk-devel libgcc.{x86_64,i686} libstdc++.{x86_64,i686} libX11-devel.{x86_64,i686} libxml2-devel libXrandr.{x86_64,i686} libXrender.{x86_64,i686} libxslt lz4-libs lzop make maven mesa-libGL-devel.{x86_64,i686} ncurses ncurses-compat-libs ncurses-devel.{x86_64,i686} ninja-build openssl-devel optipng jpegoptim perl perl-Digest-MD5-File perl-Switch pngcrush python python2 python3-virtualenv python3 python3-mako python-mako python-markdown python-networkx readline-devel.{x86_64,i686} rsync schedtool SDL squashfs-tools syslinux-devel unzip wxGTK xml2 xz-lzma-compat zip zlib zlib-devel vim-common vboot-utils mozilla-fira-mono-fonts mozilla-fira-sans-fonts openssl nano htop wget libxcrypt-compat.x86_64 golang
+sudo dnf install @development-tools android-tools automake bison bzip2 bzip2-libs ccache curl dpkg-dev flex gcc gcc-c++ git git-lfs glibc-devel.{x86_64,i686} gperf libstdc++.{x86_64,i686} libxcrypt-compat libxml2-devel libxslt lz4-libs lzop make maven ncurses ncurses-compat-libs ncurses-devel.{x86_64,i686} openssl openssl-devel pngcrush python python3-virtualenv python3 python3-mako python-mako python-networkx schedtool squashfs-tools syslinux-devel unzip zip zlib zlib-devel
 ```
 
 You might need to remove metadata_csum_seed and orhpan_file from /etc/mke2fs.conf if you encounter error mentioning "Invalid filesystem option set" as per [Reddit](https://www.reddit.com/r/LineageOS/comments/18lej4b/if_your_build_is_failing_with_an_error_regarding/)
