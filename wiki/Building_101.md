@@ -8,15 +8,28 @@ Do not follow this guide inside Crave Devspace CLI, follow [this](/wiki/Crave_De
 
 ## Syncing AOSP Source code
 
-### Installing `repo` and other dependencies
+### Setup: Installing `repo` and other dependencies
 
 Repo is a tool developed by google to help manage the thousands of git repos used in a project like AOSP.
 
-You must first install it on your server.
+You must first install it on your computer/server.
 ```
-mkdir ~/bin && PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+mkdir ~/bin && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
 ```
-There are also some additional dependencies, which are usually covered by the `base-devel` package group of your linux distribution.
+After that you should check if ~/bin is already in your PATH by doing
+```
+printenv PATH|grep ~/bin
+```
+if you do not get any output you have to add:
+```
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+```
+to ~/.profile or some other script that runs on shell creation.
+
+There are also some additional dependencies, which you need to install to build android.
 
 Arch Linux:
 ```
@@ -30,7 +43,24 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 Fedora / Fedora based distros:
 ```
-sudo dnf install @development-tools android-tools automake bc bison bzip2 bzip2-libs ccache curl dpkg-dev flex gcc gcc-c++ git git-lfs glibc-devel.{x86_64,i686} gnupg gperf ImageMagick ImageMagick-c++-devel ImageMagick-devel java-1.8.0-openjdk java-1.8.0-openjdk-devel libgcc.{x86_64,i686} libstdc++.{x86_64,i686} libX11-devel.{x86_64,i686} libxml2-devel libXrandr.{x86_64,i686} libXrender.{x86_64,i686} libxslt lz4-libs lzop make maven mesa-libGL-devel.{x86_64,i686} ncurses ncurses-compat-libs ncurses-devel.{x86_64,i686} ninja-build openssl-devel optipng jpegoptim perl perl-Digest-MD5-File perl-Switch pngcrush python python2 python3-virtualenv python3 python3-mako python-mako python-markdown python-networkx readline-devel.{x86_64,i686} rsync schedtool SDL squashfs-tools syslinux-devel unzip wxGTK xml2 xz-lzma-compat zip zlib zlib-devel vim-common vboot-utils mozilla-fira-mono-fonts mozilla-fira-sans-fonts openssl nano htop wget libxcrypt-compat.x86_64 golang
+sudo dnf install @development-tools android-tools automake bison bzip2 bzip2-libs ccache curl dpkg-dev flex gcc gcc-c++ git git-lfs glibc-devel.{x86_64,i686} gperf libstdc++.{x86_64,i686} libxcrypt-compat libxml2-devel libxslt lz4-libs lzop make maven ncurses ncurses-compat-libs ncurses-devel.{x86_64,i686} openssl openssl-devel pngcrush python python3-virtualenv python3 python3-mako python-mako python-networkx schedtool squashfs-tools syslinux-devel unzip zip zlib zlib-devel
+```
+
+You might need to remove metadata_csum_seed and orhpan_file from /etc/mke2fs.conf if you encounter error mentioning "Invalid filesystem option set" as per [Reddit](https://www.reddit.com/r/LineageOS/comments/18lej4b/if_your_build_is_failing_with_an_error_regarding/)
+
+
+If you build a lot you should consider enabling ccache to save yourself some build time.
+```
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+```
+You should limit its size to something reasonable with the below command
+```
+ccache -M 50G
+```
+To further increase the number of cached files at the cost of slight decompression overhead you can enable compression.
+```
+ccache -o compression=true
 ```
 
 ### Initialising and syncing source
@@ -68,10 +98,10 @@ sudo dnf install @development-tools android-tools automake bc bison bzip2 bzip2-
 
 5. Run
     ```
-    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) --retry-fetches=25
     ```
 
-In case you ger RPC errors, try reducing the -j argument to something like four. I usually run this sync command two or three times, to clone any repos that failed to clone during the previous sync (bad internet problems).
+In case you get RPC errors, try reducing the -j argument to something like four. I usually run this sync command two or three times, to clone any repos that failed to clone during the previous sync (bad internet problems).
 
 6. Wait for the command(s) to complete.
 
@@ -94,7 +124,7 @@ If you are lucky enough to have a local manifest, just drop it in to
 ```
 ANDROID_CLONE_DIRECTORY/.repo/local_manifests/
 ```
-(you may have to create this directory). After this, just run repo sync once more.
+(you may have to create this directory). After this, just run repo sync once more. You can also do this step right after repo init to save yourself another sync.
 
 ---
 
@@ -102,19 +132,31 @@ If you arent lucky enough to have a local manifest, do not worry, you can still 
 
 Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos you need to clone will often be mentioned in a lineage.dependencies, aosp.dependencies or crdroid.dependencies file within the device tree.
 
+Vendor repos are usually not listed, but try to get them from the same source as the device trees. For official Lineage OS this TheMuppets [GitLab](https://gitlab.com/the-muppets)/[GitHub](https://github.com/TheMuppets), but you can also extract the blobs manually if you have a build with that tree flashed onto your device by running:
+
+```
+./extract-files.sh
+```
+or
+```
+./extract-files.py
+```
+
+in your device tree when connected to your device with enabled adb root. Alternatively you can also [extract them from the rom zip](https://wiki.lineageos.org/extracting_blobs_from_zips)
+
 **Note**: Most people name their android-related repositories like `android_device_xiaomi_spes` or `device_xiaomi_spes`. You can easily find the path you need to  clone the repo to by replacing the `_` with a `/`, ignoring prefixes like android_ and proprietary_
 
 
 ## Building Time!
 
 1. Run
-    ```
-    . build/envsetup.sh
-    ```
-    or
-    ```
-    source build/envsetup.sh
-    ```
+```
+. build/envsetup.sh
+```
+or
+```
+source build/envsetup.sh
+```
 
 2. Run `lunch PRODUCT-RELEASE(IF A14 QPR2+)-VARIANT`. This is the device and variant you want to build for. 
 (eg `lunch lineage_bacon-userdebug or lunch lineage_oxygen-ap2a-userdebug)
@@ -122,28 +164,29 @@ Run `git clone https://url -b branch(optional) path/to/folder`. The exact repos 
 However, it is easier to use breakfast instead, like `breakfast PRODUCT VARIANT` 
 (eg. breakfast oxygen userdebug)
 
-    - *Product*: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and AOSP based forks use aosp_device.
+- Product: Many roms have their own prefixes. Lineage and most lineage-based forks use lineage_device, LMOdroid uses lmo_device and other AOSP based forks use aosp_device.
 
-    - *Release*: **Post A14 QPR2**, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
+- Release: Starting with A14 QPR2, you must include the `release` field. On A14 QPR2, this will look something like `ap1a`. On android `main` branch, this is `trunk_staging`.
+   You can find out the release that the source ships by running:
+   ```
+   ls -1 -I trunk_staging -I root $(gettop)/build/release/aconfig/ | tail -n1
+   ```
 
-    - *Variant*: Variant is the type of build you want to build.
-        - `eng` offers easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
-
-        - `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant.
-
-        - `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
+- Variant: Variant is the type of build you want to build.
+    - `eng` offers easy debugging, but runs slow on the device and is insecure. This should ideally only be used for tree developement or booting a new android version for the first time on a device.
+    - `userdebug` is a hybrid between `eng` and `user`. This offers easier debugging than `user`, like `adb root`(if enabled through settings) and runs faster on the device. This builds slower. Most people ship custom roms as this variant.
+    - `user` is the least debuggable variant. Most OEMs ship their stock rom in this variant. Here debuggability is minimal.
 
 3. Run
-    ```
-    m -j$(nproc --all)
-    ```
+```
+m -j$(nproc --all)
+```
+- **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j (jobs) argument is the number of threads which are used during compilation.
 
-    - **Note #1**: If you get errors regarding memory, try reducing the -j argument. The j (jobs) argument is the number of threads which are used during compilation.
-
-    - **Note #2**: If you want a flashable zip instead of raw images, run
-    ```
-    m bacon -j$(nproc --all)
-    ```
+- **Note #2**: If you want a flashable zip instead of raw images, run (for most roms)
+```
+m bacon -j$(nproc --all)
+```
 
 Hopefully, android builds without errors. This guide does not cover fixing common errors. Once done, you should hopefully see `build completed`.
 
